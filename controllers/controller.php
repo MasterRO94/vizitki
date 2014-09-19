@@ -38,24 +38,31 @@
 
             if(!$error){
                 $uploadDir = 'uploads/_temp/';
-                $uploadImage = $uploadDir . uniqid(true) .'.'. $type[1];
-                $result = array('tmp_name' => $_FILES['file']['tmp_name'], 'uploadDir' => $uploadDir, 'uploadImage' => $uploadImage);
+                $uploadImageName = uniqid(true) .'.'. $type[1];
+                $uploadImage = $uploadDir . $uploadImageName;
+                //$result = array('tmp_name' => $_FILES['file']['tmp_name'], 'uploadDir' => $uploadDir, 'uploadImage' => $uploadImage);
                 $success = is_uploaded_file($_FILES['file']['tmp_name']);
 
-               /* print_arr($_FILES);
+                /*print_arr($_FILES);
                 var_dump($result);
+                var_dump($success);
                 die;*/
+
 
                 if($success){
                     move_uploaded_file($_FILES['file']['tmp_name'], $uploadImage);
-
-                    $result[] = '<script type="text/javascript">
-                                 $("body").empty();
-                                  var photo_name = "' .$uploadImage. '";
-                                  window.parent.$("#new_photo").html(photo_name);
-                                </script>';
+                    $result = '<head><script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+                                <script>window.jQuery || document.write(\'<script src="<?=VIEW?>js/jquery-1.11.1.min.js">\x3C/script>\')</script>
+                                <script type="text/javascript">
+                                 $(document).ready(function(){
+                                     $("body").empty();
+                                      var photo_name = "' .$uploadImageName. '";
+                                      window.parent.$("#new_photo").html(photo_name);
+                                 });
+                                </script></head>';
+                    unset($_POST['uploadImage']);
                 }else{
-                    $result[] = 'File not uploaded!';
+                    $result = 'File not uploaded!';
                 }
 
             }
@@ -100,8 +107,6 @@
         case('uploadImageToEditor'):
             if(isset($_POST['uploadImage'])){
                echo uploadImage();
-               var_dump(uploadImage());
-               print_arr($_FILES);
             }else{
                 redirect();
             }
