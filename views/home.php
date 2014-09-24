@@ -39,7 +39,7 @@
         <?php endforeach; ?>
     </section>
     <section class="page_text">
-        <?=$text?>
+        <?=$page['text']?>
     </section>
 
 </section>

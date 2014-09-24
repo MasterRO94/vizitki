@@ -15,13 +15,16 @@ define('CONTROLLER', 'controllers/controller.php');
 // view
 define('VIEW', 'views/');
 
+// assets
+define('ASSET', PATH.'/'.VIEW);
+
 // homepage TITLE
 define('TITLE','Визитка. Печать, изготовление, образцы визиток. Заказать, сделать (создать) креативные, стильные, необычные, эксклюзивные визитки онлайн недорого — 100vizitok');
 
 // admin
 define('ADMIN', 'admin/');
 
-// folder wuth content (images etc.)
+// folder with content (images etc.)
 define('VIZITKAIMG', PATH.'/uploads/');
 
 // DB server

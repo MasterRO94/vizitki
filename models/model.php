@@ -34,7 +34,7 @@ mysqli_query($link,"SET NAMES 'UTF8'") or die('Cant set charset');
     function getServices(){
         global $link;
 
-        $q = "SELECT * FROM services";
+        $q = "SELECT * FROM services ORDER BY position";
         $result = mysqli_query($link,$q);
         if(!$result){
             return NULL;
@@ -51,30 +51,73 @@ mysqli_query($link,"SET NAMES 'UTF8'") or die('Cant set charset');
 /*============== Get Services ================*/
 
 
-/*============== Get PageHeaders ================*/
-/*function getPageHeaders($page){
+/*============== Get Group Templates ================*/
+    function getGroupTemplates(){
+        global $link;
+
+        $q = "SELECT * FROM templates_group";
+        $result = mysqli_query($link,$q);
+        if(!$result){
+            return NULL;
+        }
+
+        $group_templates = array();
+        while($row = mysqli_fetch_assoc($result)){
+            $group_templates[] = $row;
+        }
+        return $group_templates;
+
+    }
+
+/*============== Get Group Templates ================*/
+
+
+/*============== Get Group Templates ================*/
+    function getTemplates($alias){
+        global $link;
+
+        $q = "SELECT * FROM template WHERE group_alias = '{$alias}'";
+        $result = mysqli_query($link,$q);
+        if(!$result){
+            return NULL;
+        }
+
+        $templates = array();
+        while($row = mysqli_fetch_assoc($result)){
+            $templates[] = $row;
+        }
+        return $templates;
+
+    }
+
+/*============== Get Group Templates ================*/
+
+
+/*============== Get Template ================*/
+function getTemplate($id){
     global $link;
 
-    $q = "SELECT text FROM page WHERE name='{$page}'";
+    $q = "SELECT * FROM template WHERE id = '{$id}'";
     $result = mysqli_query($link,$q);
     if(!$result){
         return NULL;
     }
 
-    $page_text = array();
+    $template = array();
     while($row = mysqli_fetch_assoc($result)){
-        $page_text[] = $row;
+        $template[] = $row;
     }
-    if(count($page_text) > 1) return false;
 
-    return $page_text[0];
-}*/
+    if(count($template) != 1 ) return false;
 
-/*============== Get PageText ================*/
+    return $template[0];
+}
+
+/*============== Get Template ================*/
 
 
-/*============== Get PageText ================*/
-function getPage($page){
+/*============== Get PageContent ================*/
+function getPageContent($page){
     global $link;
 
     $q = "SELECT * FROM page WHERE name='{$page}'";
@@ -83,16 +126,16 @@ function getPage($page){
         return NULL;
     }
 
-    $page_text = array();
+    $pageContent = array();
     while($row = mysqli_fetch_assoc($result)){
-        $page_text[] = $row;
+        $pageContent[] = $row;
     }
-    if(count($page_text) > 1) return false;
+    if(count($pageContent) > 1) return false;
 
-    return $page_text[0];
+    return $pageContent[0];
 }
 
-/*============== Get PageText ================*/
+/*============== Get PageContent ================*/
 
 
 

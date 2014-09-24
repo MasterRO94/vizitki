@@ -397,7 +397,7 @@ $(document).ready(function() {
                         li.css('opacity', 0.2);
                     }
 
-                    img = $('<img src="http://localhost/vizitki/uploads/'+liItm.data_name+'">');
+                    img = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'">');
                     img.appendTo(imgP);
                     imgP.appendTo(imgC);
                     imgC.appendTo(liImg);
@@ -407,7 +407,7 @@ $(document).ready(function() {
                     liImg.appendTo('#sortableBlock');
 
                     var imgCont = $('<div>').addClass('imgMove').attr('style', liItm.styleImg).attr('data-id', liItm.data_id);
-                    var imgm = $('<img src="http://localhost/vizitki/uploads/'+liItm.data_name+'" alt="">');
+                    var imgm = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'" alt="">');
                     imgm.appendTo(imgCont);
                     imgCont.appendTo(mainField);
 
@@ -466,7 +466,7 @@ $(document).ready(function() {
                             li.css('opacity', 0.2);
                         }
 
-                        img = $('<img src="http://localhost/vizitki/views/images/templates/'+liItm.data_name+'">');
+                        img = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'">');
                         img.appendTo(imgP);
                         imgP.appendTo(imgC);
                         imgC.appendTo(liImg);
@@ -476,7 +476,7 @@ $(document).ready(function() {
                         liImg.appendTo('#sortableBlock');
 
                         var imgCont = $('<div>').addClass('imgMove').attr('style', liItm.styleImg).attr('data-id', liItm.data_id);
-                        var imgm = $('<img src="http://localhost/vizitki/views/images/templates/'+liItm.data_name+'" alt="">');
+                        var imgm = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'" alt="">');
                         imgm.appendTo(imgCont);
                         imgCont.appendTo(mainField);
 
@@ -537,7 +537,7 @@ $(document).ready(function() {
                             li.css('opacity', 0.2);
                         }
 
-                        img = $('<img src="http://localhost/vizitki/views/images/templates/'+liItm.data_name+'">');
+                        img = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'">');
                         img.appendTo(imgP);
                         imgP.appendTo(imgC);
                         imgC.appendTo(liImg);
@@ -547,7 +547,7 @@ $(document).ready(function() {
                         liImg.appendTo('#sortableBlock');
 
                         var imgCont = $('<div>').addClass('imgMove').attr('style', liItm.styleImg).attr('data-id', liItm.data_id);
-                        var imgm = $('<img src="http://localhost/vizitki/views/images/templates/'+liItm.data_name+'" alt="">');
+                        var imgm = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'" alt="">');
                         imgm.appendTo(imgCont);
                         imgCont.appendTo(mainField);
 

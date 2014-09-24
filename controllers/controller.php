@@ -68,29 +68,70 @@
             }
             return $result;
         }
-    /*-------------------------------------------*/
+        /*------------------------------------------ END UPLOAD TEMP IMAGE FUNCTION --------------------------------------------------------*/
+
+/*=============== TEST FOR TEXT PAGE ====================== */
+    if(preg_match_all('/[catalog]{7,}[_]/', $view, $match)){
+        $catalogView = $view;
+        $view = 'textPage';
+    };
+/*==========================================================*/
 
 
 
-
-
-
-/* ================================================================================================
--------------------      DOWNLOAD CONTENT FOR VIEWS AND SWITCH FUNCTIONS      --------------------
-==================================================================================================*/
+/*=================================================================================================
+-------------------      DOWNLOAD CONTENT FOR VIEWS AND SWITCH FUNCTIONS      ---------------------
+===================================================================================================*/
     switch($view){
         // homepage
         case('home'):
             $bigButtonsMenu = getMenu('big_buttons');
             $services = getServices();
-            //$headers = getPageHeaders($view);
-            if(!$headers){
-                $headers = '';
+            $page = getPageContent($view);
+            if(!$page){
+                $page = '';
             }
-            $text = getPage($view);
-            if(!$text){
-                $text = '';
+        break;
+
+        // edit templates group list
+        case('vizitka_edit_group_list'):
+            $bigButtonsMenu = getMenu('big_buttons');
+            $group_templates = getGroupTemplates();
+            $page = getPageContent($view);
+            if(!$page){
+                $page = '';
             }
+        break;
+
+        // edit template list
+        case('vizitka_edit_template_list'):
+            $bigButtonsMenu = getMenu('big_buttons');
+            $templates = getTemplates($alias);
+            $page = getPageContent($view);
+            if(!$page){
+                $page = '';
+            }
+        break;
+
+        // edit template
+        case('vizitka_edit_template'):
+            $editor = true;
+            $bigButtonsMenu = getMenu('big_buttons');
+            $template = getTemplate($id);
+            $page = getPageContent($view);
+            if(!$page){
+                $page = '';
+            }
+        break;
+
+        //catalog text page
+        case('textPage'):
+            $bigButtonsMenu = getMenu('big_buttons');
+            $page = getPageContent($catalogView);
+            if(!$page){
+                $page = '';
+            }
+            $view = 'textPage';
         break;
 
         //registration
@@ -101,6 +142,10 @@
         //editor
         case('editor'):
             $editor = true;
+            $page = getPageContent($view);
+            if(!$page){
+                $page = '';
+            }
         break;
 
         // uploadImage
@@ -115,7 +160,7 @@
         default:
             $view = 'home';
     }
-/* ================================================================================================
+/*================================================================================================
 -------------------      DOWNLOAD CONTENT FOR VIEWS AND SWITCH FUNCTIONS      --------------------
 ==================================================================================================*/
 
