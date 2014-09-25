@@ -1626,6 +1626,7 @@
       <column name="offset" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="code_face" sqlType="TEXT" length="65535" precision="0" nullable="false" jdbcType="-1"/>
       <column name="code_back" sqlType="TEXT" length="65535" precision="0" nullable="false" jdbcType="-1"/>
+      <column name="preview" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <index name="group_id" unique="true" columns="group_alias"/>
     </table>

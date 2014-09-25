@@ -31,6 +31,9 @@ $routes = array(
 
     array('url' => '/editor', 'view' => 'editor'),
     array('url' => '/upload-image', 'view' => 'uploadImageToEditor'),
+
+    array('url' => '/save/order', 'view' => 'saveOrder'),
+
 );
 
 

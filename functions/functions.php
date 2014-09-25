@@ -16,6 +16,13 @@ function redirect(){
     exit;
 }
 
+// redirect To HomePage
+function redirectToHomepage($message=NULL){
+    header("Location: ".PATH);
+    setSession('msg', $message);
+    exit;
+}
+
 
 function setSession($name, $value){
     $_SESSION[$name] = $value;

@@ -70,12 +70,91 @@
         }
         /*------------------------------------------ END UPLOAD TEMP IMAGE FUNCTION --------------------------------------------------------*/
 
+    /*------------------------------------------
+    //           CONVERT IMAGE TO PNG          //
+    -------------------------------------------*/
+/*    if($_POST['doImage']){
+        $data = $_POST['data'];
+            saveUserTemplate($data);
+        exit;
+
+    }*/
+    /*------------------------------------------ END CONVERTING IMAGE FUNCTION --------------------------------------------------------*/
+
+
+
+
+
 /*=============== TEST FOR TEXT PAGE ====================== */
     if(preg_match_all('/[catalog]{7,}[_]/', $view, $match)){
         $catalogView = $view;
         $view = 'textPage';
     };
 /*==========================================================*/
+
+
+/*=============== SAVE ORDER CHECKS ====================== */
+    function checkAndSaveOrder(){
+        if(isset($_POST['wishes'])){
+
+            $save = array();
+
+            $save['wishes'] = $_POST['wishes'];
+
+            $error = '';
+
+            if(!isset($_POST['printing_type'])){
+                $error .= '<li>Не выбран тираж</li>';
+            }else{
+                $save['printing_type'] = $_POST['printing_type'];
+            }
+
+            if(!isset($_POST['paper_type'])){
+                $save['paper_type'] = $_POST['paper_type'];
+            }
+
+            if(!isset($_POST['kolvo'])){
+                $error .= '<li>Не выбрано количество</li>';
+            }else{
+                $save['kolvo'] = $_POST['kolvo'];
+            }
+
+            if(isset($_POST['edit_template'])){
+                $save['type'] = 'Визитки';
+            }else{
+                $save['type'] = 'Макеты';
+            }
+
+            if(isset($_POST['TMPL'])){
+                $save['type_sides'] = $_POST['TMPL']['type_side'];
+                $save['img_out'] = $_POST['TMPL']['img_out'];
+            }else{
+                $save['type_sides'] = NULL;
+                $save['img_out'] = NULL;
+            }
+
+            if($error == ''){
+                if(saveOrder($save)){
+                    redirectToHomepage('Ваша заявка успено отправлена');
+                }else{
+                    redirect();
+                }
+            }else{
+                setSession('errors', $error);
+                redirect();
+            }
+
+
+
+        }else{
+            setSession('error', 'Ошибка!');
+            redirect();
+        }
+    }
+/*==========================================================*/
+
+
+
 
 
 
@@ -117,6 +196,7 @@
         case('vizitka_edit_template'):
             $editor = true;
             $bigButtonsMenu = getMenu('big_buttons');
+            $tiraj = getTiraj();
             $template = getTemplate($id);
             $page = getPageContent($view);
             if(!$page){
@@ -156,6 +236,13 @@
                 redirect();
             }
         break;
+
+
+        //save order
+        case('saveOrder'):
+            checkAndSaveOrder();
+        break;
+
 
         default:
             $view = 'home';

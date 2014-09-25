@@ -1,3 +1,7 @@
+<?php
+    print_arr($_POST);
+?>
+
 <?php if($template): ?>
     <section id="editor" style="width: 960px;">
     <div class="editor">
@@ -94,7 +98,7 @@
         <div class="clear"></div>
     </div><!-- .editor -->
 
-    <form class="validat form_style" method="post" action="" enctype='multipart/form-data'>
+    <form class="validat form_style" method="post" action="<?=PATH?>/save/order" enctype='multipart/form-data'>
 
     <div class="like_h1">Поля заказа</div>
 
@@ -115,18 +119,11 @@
         <div class="controls">
             <select data-error="" id="printingType" class="valid" name="printing_type">
                 <option data-cost="0"></option>
-                <option data-cost="17" data-side="1" value="1">
-                    100 штук                                                                                                             (одностронние)
-                </option>
-                <option data-cost="41" data-side="2" value="2">
-                    100 штук                                                                                                             (двусторонние)
-                </option>
-                <option data-cost="90" data-side="1" value="3">
-                    1000 штук                                                                                                             (одностронние)
-                </option>
-                <option data-cost="114" data-side="2" value="4">
-                    1000 штук                                                                                                             (двусторонние)
-                </option>
+                <?php foreach($tiraj as $t): ?>
+                    <option data-cost="<?=$t['price']?>" data-side="<?=$t['type_side']?>" value="<?=$t['count']?>">
+                        <?=$t['text']?>
+                    </option>
+                <?php endforeach; ?>
             </select>
             <div class="help">Выберите тираж</div>
         </div>
@@ -141,9 +138,6 @@
     </div>
 
     <p class="properties-order">Дополнительные услуги</p>
-
-
-
 
 
     <div id="showPaperType">
@@ -344,6 +338,8 @@
             <input type="hidden" id="width_tpl" name="TMPL[width]" value="<?=$template['width']?>" />
             <input type="hidden" id="offset_tpl" name="TMPL[offset]" value="<?=$template['offset']?>" />
             <input type="hidden" id="type_side" name="TMPL[type_side]" value="1"/>
+            <!-- converted to image code -->
+            <div id="img_out" style="display: none"><input type="hidden" id="img-out" name="TMPL[img_out]" value=""/></div>
         </form>
     </section>
 

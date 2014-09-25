@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="controller.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="controller.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="41" selection-start="4351" selection-end="4351" vertical-scroll-proportion="-11.115385" vertical-offset="1734" max-vertical-offset="2992">
+            <state line="137" column="72" selection-start="4728" selection-end="4728" vertical-scroll-proportion="0.52641165" vertical-offset="2040" max-vertical-offset="4471">
               <folding />
             </state>
           </provider>
@@ -35,14 +35,32 @@
       <file leaf-file-name="model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="44" selection-start="2878" selection-end="2878" vertical-scroll-proportion="-11.115385" vertical-offset="1581" max-vertical-offset="2941">
+            <state line="137" column="0" selection-start="3338" selection-end="3338" vertical-scroll-proportion="-14.576923" vertical-offset="1950" max-vertical-offset="3672">
               <folding>
-                <marker date="1411561225981" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
-                <marker date="1411561225981" expanded="true" signature="1626:1655" placeholder="SELECT * FRO..templates_group..." />
-                <marker date="1411561225981" expanded="true" signature="2121:2174" placeholder="SELECT * FRO..template..." />
-                <marker date="1411561225981" expanded="true" signature="2599:2640" placeholder="SELECT * FRO..template..." />
-                <marker date="1411561225981" expanded="true" signature="3072:3111" placeholder="SELECT * FRO..page..." />
+                <marker date="1411652680384" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
+                <marker date="1411652680384" expanded="true" signature="1626:1655" placeholder="SELECT * FRO..templates_group..." />
+                <marker date="1411652680384" expanded="true" signature="2121:2174" placeholder="SELECT * FRO..template..." />
+                <marker date="1411652680384" expanded="true" signature="2599:2640" placeholder="SELECT * FRO..template..." />
+                <marker date="1411652680384" expanded="true" signature="3055:3082" placeholder="SELECT * FRO..tiraj_vizitki..." />
+                <marker date="1411652680384" expanded="true" signature="3454:3493" placeholder="SELECT * FRO..page..." />
+                <marker date="1411652680384" expanded="true" signature="4041:4318" placeholder="INSERT INTO ..." />
+                <marker date="1411652680384" expanded="true" signature="4041:4282" placeholder="INSERT INTO ..." />
+                <marker date="1411652680384" expanded="true" signature="4176:4318" placeholder="INSERT INTO ..." />
+                <marker date="1411652680384" expanded="true" signature="4187:4459" placeholder="INSERT INTO ..." />
+                <marker date="1411652680384" expanded="true" signature="4187:4318" placeholder="INSERT INTO ..." />
+                <marker date="1411652680384" expanded="true" signature="4187:4318" placeholder="INSERT INTO ..." />
+                <marker date="1411652680384" expanded="true" signature="4187:4228" placeholder="INSERT INTO ..." />
+                <marker date="1411652680384" expanded="true" signature="4468:4519" placeholder="/*==========..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="functions.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/functions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="32" selection-start="460" selection-end="460" vertical-scroll-proportion="-11.769231" vertical-offset="51" max-vertical-offset="748">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -51,7 +69,11 @@
         <entry file="file://$PROJECT_DIR$/views/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="12" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="612">
-              <folding />
+              <folding>
+                <marker date="1411375279170" expanded="true" signature="829:1113" placeholder="..." />
+                <marker date="1411375279170" expanded="true" signature="860:1100" placeholder="..." />
+                <marker date="1411375279170" expanded="true" signature="956:1029" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -59,28 +81,47 @@
       <file leaf-file-name="routes.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="1" selection-start="178" selection-end="178" vertical-scroll-proportion="7.1923075" vertical-offset="306" max-vertical-offset="1105">
+            <state line="34" column="57" selection-start="1704" selection-end="1704" vertical-scroll-proportion="-6.5384617" vertical-offset="408" max-vertical-offset="1156">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vizitka_edit_template.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="vizitka_edit_template.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/vizitka_edit_template.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="350" column="32" selection-start="17615" selection-end="17615" vertical-scroll-proportion="0.90710384" vertical-offset="5452" max-vertical-offset="6069">
+            <state line="123" column="39" selection-start="6503" selection-end="6503" vertical-scroll-proportion="-11.615385" vertical-offset="1789" max-vertical-offset="6001">
               <folding>
-                <element signature="e#49#70#0" expanded="true" />
-                <element signature="e#2042#2075#0" expanded="true" />
-                <element signature="e#3336#3389#0" expanded="true" />
-                <element signature="e#3602#3635#0" expanded="true" />
-                <element signature="e#3846#3868#0" expanded="true" />
-                <element signature="e#4483#4505#0" expanded="true" />
-                <element signature="e#4929#4951#0" expanded="true" />
-                <element signature="e#5935#5957#0" expanded="true" />
-                <element signature="e#7775#7810#0" expanded="true" />
-                <element signature="e#15516#15538#0" expanded="true" />
+                <element signature="e#82#103#0" expanded="true" />
+                <element signature="e#2075#2108#0" expanded="true" />
+                <element signature="e#3369#3422#0" expanded="true" />
+                <element signature="e#3635#3668#0" expanded="true" />
+                <element signature="e#3879#3901#0" expanded="true" />
+                <element signature="e#4516#4538#0" expanded="true" />
+                <element signature="e#4962#4984#0" expanded="true" />
+                <element signature="e#5988#6010#0" expanded="true" />
+                <element signature="e#7125#7160#0" expanded="true" />
+                <element signature="e#14866#14888#0" expanded="true" />
+                <element signature="e#16961#16982#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_script.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/js/main_script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="46" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="my.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/js/my.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2652">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,8 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/blocks/mainMenu.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/views/css/reset.css" />
         <option value="$PROJECT_DIR$/views/trebovanija_k_maketam.php" />
         <option value="$PROJECT_DIR$/views/error404.php" />
@@ -125,27 +164,29 @@
         <option value="$PROJECT_DIR$/views/js/liValidForm.js" />
         <option value="$PROJECT_DIR$/views/js/my.js" />
         <option value="$PROJECT_DIR$/views/css/my.css" />
-        <option value="$PROJECT_DIR$/functions/functions.php" />
         <option value="$PROJECT_DIR$/views/js/main_js.js" />
         <option value="$PROJECT_DIR$/views/editor.php" />
         <option value="$PROJECT_DIR$/views/blocks/addImageToEditor.php" />
         <option value="$PROJECT_DIR$/views/index.php" />
         <option value="$PROJECT_DIR$/views/textPage.php" />
         <option value="$PROJECT_DIR$/views/css/style.css" />
-        <option value="$PROJECT_DIR$/views/css/main_style.css" />
-        <option value="$PROJECT_DIR$/views/js/editor.js" />
-        <option value="$PROJECT_DIR$/views/js/main_script.js" />
         <option value="$PROJECT_DIR$/views/home.php" />
         <option value="$PROJECT_DIR$/views/vizitka_edit.php" />
         <option value="$PROJECT_DIR$/views/vizitka_edit_group_list.php" />
         <option value="$PROJECT_DIR$/views/vizitka_edit_template_list.php" />
-        <option value="$PROJECT_DIR$/routes.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/views/blocks/head.php" />
-        <option value="$PROJECT_DIR$/views/blocks/editorResources.php" />
-        <option value="$PROJECT_DIR$/controllers/controller.php" />
+        <option value="$PROJECT_DIR$/views/js/canvas2image.js" />
+        <option value="$PROJECT_DIR$/views/js/base64.js" />
+        <option value="$PROJECT_DIR$/views/css/main_style.css" />
+        <option value="$PROJECT_DIR$/views/js/editor.js" />
+        <option value="$PROJECT_DIR$/routes.php" />
+        <option value="$PROJECT_DIR$/views/js/main_script.js" />
         <option value="$PROJECT_DIR$/models/model.php" />
+        <option value="$PROJECT_DIR$/views/blocks/editorResources.php" />
         <option value="$PROJECT_DIR$/views/vizitka_edit_template.php" />
+        <option value="$PROJECT_DIR$/functions/functions.php" />
+        <option value="$PROJECT_DIR$/controllers/controller.php" />
       </list>
     </option>
   </component>
@@ -229,6 +270,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vizitki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vizitki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -381,7 +440,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22564936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2247557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1335505" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -465,31 +524,13 @@
     <entry file="file://$PROJECT_DIR$/views/editor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="80" column="79" selection-start="4620" selection-end="4620" vertical-scroll-proportion="0.0" vertical-offset="1032" max-vertical-offset="6035">
-          <folding>
-            <element signature="n#style#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#4;n#form#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#7;n#form#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Desktop/controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4845" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3128">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/blocks/addImageToEditor.php">
@@ -509,20 +550,6 @@
     <entry file="file://$PROJECT_DIR$/views/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1839" column="0" selection-start="39765" selection-end="39765" vertical-scroll-proportion="0.9380692" vertical-offset="30748" max-vertical-offset="31365">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/css/main_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="87" selection-end="87" vertical-scroll-proportion="0.119929455" vertical-offset="0" max-vertical-offset="567">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/js/main_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="15" selection-start="46" selection-end="46" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="136">
           <folding />
         </state>
       </provider>
@@ -548,34 +575,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/js/editor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="45" selection-start="4938" selection-end="4938" vertical-scroll-proportion="-6.769231" vertical-offset="2289" max-vertical-offset="10302">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/editor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="0" selection-end="22572" vertical-scroll-proportion="0.06500956" vertical-offset="0" max-vertical-offset="6035">
-          <folding>
-            <element signature="n#style#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#form#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#span#0;n#div#4;n#form#0;n#section#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#7;n#form#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="1" selection-start="178" selection-end="178" vertical-scroll-proportion="7.1923075" vertical-offset="306" max-vertical-offset="1105">
           <folding />
         </state>
       </provider>
@@ -583,13 +585,6 @@
     <entry file="file://$PROJECT_DIR$/views/blocks/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="48" selection-start="538" selection-end="538" vertical-scroll-proportion="0.27224198" vertical-offset="0" max-vertical-offset="562">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/blocks/editorResources.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="40" selection-start="1685" selection-end="1685" vertical-scroll-proportion="0.6913124" vertical-offset="0" max-vertical-offset="541">
           <folding />
         </state>
       </provider>
@@ -608,48 +603,160 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/model.php">
+    <entry file="file://$PROJECT_DIR$/views/js/interfaceImageApi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="44" selection-start="2878" selection-end="2878" vertical-scroll-proportion="-11.115385" vertical-offset="1581" max-vertical-offset="2941">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.773913" vertical-offset="1020" max-vertical-offset="5202">
           <folding>
-            <marker date="1411561225981" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
-            <marker date="1411561225981" expanded="true" signature="1626:1655" placeholder="SELECT * FRO..templates_group..." />
-            <marker date="1411561225981" expanded="true" signature="2121:2174" placeholder="SELECT * FRO..template..." />
-            <marker date="1411561225981" expanded="true" signature="2599:2640" placeholder="SELECT * FRO..template..." />
-            <marker date="1411561225981" expanded="true" signature="3072:3111" placeholder="SELECT * FRO..page..." />
+            <marker date="1411046055293" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1411046055293" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/jquery.liActualSize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/jquery.ui.touch-punch.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="575">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/canvas2image.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="234" column="5" selection-start="7780" selection-end="7780" vertical-scroll-proportion="0.9421769" vertical-offset="3424" max-vertical-offset="4080">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/css/main_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="18" selection-start="122" selection-end="122" vertical-scroll-proportion="0.23129252" vertical-offset="0" max-vertical-offset="588">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="57" selection-start="1704" selection-end="1704" vertical-scroll-proportion="-6.5384617" vertical-offset="408" max-vertical-offset="1156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="561" column="9" selection-start="18895" selection-end="18895" vertical-scroll-proportion="0.34848484" vertical-offset="9353" max-vertical-offset="18496">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="612">
+          <folding>
+            <marker date="1411375279170" expanded="true" signature="829:1113" placeholder="..." />
+            <marker date="1411375279170" expanded="true" signature="860:1100" placeholder="..." />
+            <marker date="1411375279170" expanded="true" signature="956:1029" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/editor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="343" column="19" selection-start="11501" selection-end="11501" vertical-scroll-proportion="0.36347827" vertical-offset="5622" max-vertical-offset="10336">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/controller.php">
+    <entry file="file://$PROJECT_DIR$/views/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="41" selection-start="4351" selection-end="4351" vertical-scroll-proportion="-11.115385" vertical-offset="1734" max-vertical-offset="2992">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.047358833" vertical-offset="26" max-vertical-offset="3128">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/main_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="46" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/my.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2652">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/blocks/editorResources.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="79" selection-start="1888" selection-end="1888" vertical-scroll-proportion="0.754159" vertical-offset="0" max-vertical-offset="541">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/vizitka_edit_template.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="350" column="32" selection-start="17615" selection-end="17615" vertical-scroll-proportion="0.90710384" vertical-offset="5452" max-vertical-offset="6069">
+        <state line="123" column="39" selection-start="6503" selection-end="6503" vertical-scroll-proportion="-11.615385" vertical-offset="1789" max-vertical-offset="6001">
           <folding>
-            <element signature="e#49#70#0" expanded="true" />
-            <element signature="e#2042#2075#0" expanded="true" />
-            <element signature="e#3336#3389#0" expanded="true" />
-            <element signature="e#3602#3635#0" expanded="true" />
-            <element signature="e#3846#3868#0" expanded="true" />
-            <element signature="e#4483#4505#0" expanded="true" />
-            <element signature="e#4929#4951#0" expanded="true" />
-            <element signature="e#5935#5957#0" expanded="true" />
-            <element signature="e#7775#7810#0" expanded="true" />
-            <element signature="e#15516#15538#0" expanded="true" />
+            <element signature="e#82#103#0" expanded="true" />
+            <element signature="e#2075#2108#0" expanded="true" />
+            <element signature="e#3369#3422#0" expanded="true" />
+            <element signature="e#3635#3668#0" expanded="true" />
+            <element signature="e#3879#3901#0" expanded="true" />
+            <element signature="e#4516#4538#0" expanded="true" />
+            <element signature="e#4962#4984#0" expanded="true" />
+            <element signature="e#5988#6010#0" expanded="true" />
+            <element signature="e#7125#7160#0" expanded="true" />
+            <element signature="e#14866#14888#0" expanded="true" />
+            <element signature="e#16961#16982#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="0" selection-start="3338" selection-end="3338" vertical-scroll-proportion="-14.576923" vertical-offset="1950" max-vertical-offset="3672">
+          <folding>
+            <marker date="1411652680384" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
+            <marker date="1411652680384" expanded="true" signature="1626:1655" placeholder="SELECT * FRO..templates_group..." />
+            <marker date="1411652680384" expanded="true" signature="2121:2174" placeholder="SELECT * FRO..template..." />
+            <marker date="1411652680384" expanded="true" signature="2599:2640" placeholder="SELECT * FRO..template..." />
+            <marker date="1411652680384" expanded="true" signature="3055:3082" placeholder="SELECT * FRO..tiraj_vizitki..." />
+            <marker date="1411652680384" expanded="true" signature="3454:3493" placeholder="SELECT * FRO..page..." />
+            <marker date="1411652680384" expanded="true" signature="4041:4318" placeholder="INSERT INTO ..." />
+            <marker date="1411652680384" expanded="true" signature="4041:4282" placeholder="INSERT INTO ..." />
+            <marker date="1411652680384" expanded="true" signature="4176:4318" placeholder="INSERT INTO ..." />
+            <marker date="1411652680384" expanded="true" signature="4187:4459" placeholder="INSERT INTO ..." />
+            <marker date="1411652680384" expanded="true" signature="4187:4318" placeholder="INSERT INTO ..." />
+            <marker date="1411652680384" expanded="true" signature="4187:4318" placeholder="INSERT INTO ..." />
+            <marker date="1411652680384" expanded="true" signature="4187:4228" placeholder="INSERT INTO ..." />
+            <marker date="1411652680384" expanded="true" signature="4468:4519" placeholder="/*==========..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="32" selection-start="460" selection-end="460" vertical-scroll-proportion="-11.769231" vertical-offset="51" max-vertical-offset="748">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="72" selection-start="4728" selection-end="4728" vertical-scroll-proportion="0.52641165" vertical-offset="2040" max-vertical-offset="4471">
+          <folding />
         </state>
       </provider>
     </entry>

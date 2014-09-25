@@ -324,6 +324,8 @@ $(document).ready(function() {
 
     $(document).on('click','#save', function(event) {
         event.preventDefault();
+        doImage();
+
         var str = '';
         var itm = $('#sortableBlock li');
         var itmlen = itm.length;

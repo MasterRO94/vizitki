@@ -116,6 +116,28 @@ function getTemplate($id){
 /*============== Get Template ================*/
 
 
+/*============== Get Tiraj ================*/
+function getTiraj(){
+    global $link;
+
+    $q = "SELECT * FROM tiraj_vizitki";
+    $result = mysqli_query($link,$q);
+    if(!$result){
+        return NULL;
+    }
+
+    $tiraj = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $tiraj[] = $row;
+    }
+
+    return $tiraj;
+}
+
+/*============== Get Tiraj ================*/
+
+
+
 /*============== Get PageContent ================*/
 function getPageContent($page){
     global $link;
@@ -134,6 +156,27 @@ function getPageContent($page){
 
     return $pageContent[0];
 }
+
+/*============== Get PageContent ================*/
+
+
+/*============== Save Order ================*/
+    function saveOrder($save){
+        global $link;
+
+        foreach($save as $item){
+            if($item == '')
+                $item = NULL;
+        }
+
+        $q = "INSERT INTO `orders` (`id`, `user_id`, `type`, `count`, `type_sides`, `wishes`, `paper_type`, `image_face`, `image_back`, `dop_uslgi`) VALUES(NULL, 1, '{$save['type']}', '{$save['kolvo']}', '{$save['type_sides']}', '{$save['wishes']}', NULL, '".$save['img_out']."', NULL, NULL)";
+        echo "$q";
+        $result = mysqli_query($link,$q);
+        if(!$result){
+            return false;
+        }
+        return true;
+    }
 
 /*============== Get PageContent ================*/
 

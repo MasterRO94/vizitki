@@ -21,3 +21,5 @@
     <script type="text/javascript" src="<?=ASSET?>js/my.js"></script>
     <script type="text/javascript" src="<?=ASSET?>js/jquery.damnUploader.js"></script>
     <script type="text/javascript" src="<?=ASSET?>js/interfaceImageApi.js"></script>
+    <script type="text/javascript" src="<?=ASSET?>js/html2canvas.js"></script>
+    <script type="text/javascript" src="<?=ASSET?>js/canvas2image.js"></script>
