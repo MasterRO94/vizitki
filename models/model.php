@@ -259,12 +259,11 @@ function getPageContent($page){
             $q = "INSERT INTO `users` (`id`, `fio`, `phone`, `email`, `address`) VALUES (null, '{$user['name']}', '{$user['phone']}', '{$user['email']}', '{$user['address']}');";
             $result = mysqli_query($link,$q);
             $user['user_id'] = mysqli_insert_id($link);
+            $_SESSION['USER']['user_id'] = $user['user_id'];
             if(!$result){
                 return false;
             }
         }
-
-
 
         /*print_arr($user);
         echo '<br/>';

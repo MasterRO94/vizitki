@@ -197,8 +197,6 @@
             );
         }
 
-
-
         $orders = getSession('basket');
 
         foreach($orders as $order){

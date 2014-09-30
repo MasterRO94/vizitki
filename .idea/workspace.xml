@@ -23,10 +23,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="controller.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="controller.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="204" column="30" selection-start="7240" selection-end="7240" vertical-scroll-proportion="-2.870674" vertical-offset="5044" max-vertical-offset="5695">
+            <state line="202" column="30" selection-start="7238" selection-end="7304" vertical-scroll-proportion="-14.576923" vertical-offset="3055" max-vertical-offset="5661">
               <folding />
             </state>
           </provider>
@@ -41,37 +41,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="model.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="275" column="21" selection-start="6724" selection-end="6724" vertical-scroll-proportion="-13.269231" vertical-offset="4330" max-vertical-offset="5389">
+            <state line="265" column="9" selection-start="6222" selection-end="6222" vertical-scroll-proportion="0.5912409" vertical-offset="4262" max-vertical-offset="5372">
               <folding>
-                <marker date="1412074501805" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
-                <marker date="1412074501805" expanded="true" signature="1626:1655" placeholder="SELECT * FRO..templates_group..." />
-                <marker date="1412074501805" expanded="true" signature="2121:2174" placeholder="SELECT * FRO..template..." />
-                <marker date="1412074501805" expanded="true" signature="2599:2640" placeholder="SELECT * FRO..template..." />
-                <marker date="1412074501805" expanded="true" signature="3055:3082" placeholder="SELECT * FRO..tiraj_vizitki..." />
-                <marker date="1412074501805" expanded="true" signature="3446:3490" placeholder="SELECT * FRO..tiraj_vizitki..." />
-                <marker date="1412074501805" expanded="true" signature="3889:3913" placeholder="SELECT * FRO..paper_type..." />
-                <marker date="1412074501805" expanded="true" signature="4300:4358" placeholder="SELECT id, t..paper_type..." />
-                <marker date="1412074501805" expanded="true" signature="4808:4832" placeholder="SELECT * FRO..dop_uslugi..." />
-                <marker date="1412074501805" expanded="true" signature="5244:5283" placeholder="SELECT * FRO..page..." />
-                <marker date="1412074501805" expanded="true" signature="5819:5912" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="5819:5910" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="5819:5971" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="5819:5972" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="5819:5976" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6285:6658" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6285:6576" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6285:6574" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6285:6571" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6285:6453" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6421:6658" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6432:6780" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6432:6658" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6432:6658" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6432:6494" placeholder="INSERT INTO ..." />
-                <marker date="1412074501805" expanded="true" signature="6789:6845" placeholder="/*==========..." />
+                <marker date="1412081973967" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
+                <marker date="1412081973967" expanded="true" signature="1626:1655" placeholder="SELECT * FRO..templates_group..." />
+                <marker date="1412081973967" expanded="true" signature="2121:2174" placeholder="SELECT * FRO..template..." />
+                <marker date="1412081973967" expanded="true" signature="2599:2640" placeholder="SELECT * FRO..template..." />
+                <marker date="1412081973967" expanded="true" signature="3055:3082" placeholder="SELECT * FRO..tiraj_vizitki..." />
+                <marker date="1412081973967" expanded="true" signature="3446:3490" placeholder="SELECT * FRO..tiraj_vizitki..." />
+                <marker date="1412081973967" expanded="true" signature="3889:3913" placeholder="SELECT * FRO..paper_type..." />
+                <marker date="1412081973967" expanded="true" signature="4300:4358" placeholder="SELECT id, t..paper_type..." />
+                <marker date="1412081973967" expanded="true" signature="4808:4832" placeholder="SELECT * FRO..dop_uslugi..." />
+                <marker date="1412081973967" expanded="true" signature="5244:5283" placeholder="SELECT * FRO..page..." />
+                <marker date="1412081973967" expanded="true" signature="5819:5912" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="5819:5910" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="5819:5971" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="5819:5972" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="5819:5976" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6344:6717" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6344:6635" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6344:6633" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6344:6630" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6344:6512" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6480:6717" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6491:6835" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6491:6717" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6491:6717" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6491:6553" placeholder="INSERT INTO ..." />
+                <marker date="1412081973967" expanded="true" signature="6848:6904" placeholder="/*==========..." />
               </folding>
             </state>
           </provider>
@@ -199,10 +199,10 @@
         <option value="$PROJECT_DIR$/views/blocks/editorResources.php" />
         <option value="$PROJECT_DIR$/routes.php" />
         <option value="$PROJECT_DIR$/views/vizitka_edit_template.php" />
-        <option value="$PROJECT_DIR$/models/model.php" />
         <option value="$PROJECT_DIR$/functions/functions.php" />
         <option value="$PROJECT_DIR$/views/basket.php" />
         <option value="$PROJECT_DIR$/controllers/controller.php" />
+        <option value="$PROJECT_DIR$/models/model.php" />
       </list>
     </option>
   </component>
@@ -456,7 +456,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2247557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2247557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1335505" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -466,7 +466,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17673716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17673716" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -747,40 +747,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="275" column="21" selection-start="6724" selection-end="6724" vertical-scroll-proportion="-13.269231" vertical-offset="4330" max-vertical-offset="5389">
-          <folding>
-            <marker date="1412074501805" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
-            <marker date="1412074501805" expanded="true" signature="1626:1655" placeholder="SELECT * FRO..templates_group..." />
-            <marker date="1412074501805" expanded="true" signature="2121:2174" placeholder="SELECT * FRO..template..." />
-            <marker date="1412074501805" expanded="true" signature="2599:2640" placeholder="SELECT * FRO..template..." />
-            <marker date="1412074501805" expanded="true" signature="3055:3082" placeholder="SELECT * FRO..tiraj_vizitki..." />
-            <marker date="1412074501805" expanded="true" signature="3446:3490" placeholder="SELECT * FRO..tiraj_vizitki..." />
-            <marker date="1412074501805" expanded="true" signature="3889:3913" placeholder="SELECT * FRO..paper_type..." />
-            <marker date="1412074501805" expanded="true" signature="4300:4358" placeholder="SELECT id, t..paper_type..." />
-            <marker date="1412074501805" expanded="true" signature="4808:4832" placeholder="SELECT * FRO..dop_uslugi..." />
-            <marker date="1412074501805" expanded="true" signature="5244:5283" placeholder="SELECT * FRO..page..." />
-            <marker date="1412074501805" expanded="true" signature="5819:5912" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="5819:5910" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="5819:5971" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="5819:5972" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="5819:5976" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6285:6658" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6285:6576" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6285:6574" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6285:6571" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6285:6453" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6421:6658" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6432:6780" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6432:6658" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6432:6658" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6432:6494" placeholder="INSERT INTO ..." />
-            <marker date="1412074501805" expanded="true" signature="6789:6845" placeholder="/*==========..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/functions/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="0" selection-start="386" selection-end="386" vertical-scroll-proportion="-3.9615386" vertical-offset="237" max-vertical-offset="816">
@@ -801,8 +767,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="204" column="30" selection-start="7240" selection-end="7240" vertical-scroll-proportion="-2.870674" vertical-offset="5044" max-vertical-offset="5695">
+        <state line="202" column="30" selection-start="7238" selection-end="7304" vertical-scroll-proportion="-14.576923" vertical-offset="3055" max-vertical-offset="5661">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="265" column="9" selection-start="6222" selection-end="6222" vertical-scroll-proportion="0.5912409" vertical-offset="4262" max-vertical-offset="5372">
+          <folding>
+            <marker date="1412081973967" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
+            <marker date="1412081973967" expanded="true" signature="1626:1655" placeholder="SELECT * FRO..templates_group..." />
+            <marker date="1412081973967" expanded="true" signature="2121:2174" placeholder="SELECT * FRO..template..." />
+            <marker date="1412081973967" expanded="true" signature="2599:2640" placeholder="SELECT * FRO..template..." />
+            <marker date="1412081973967" expanded="true" signature="3055:3082" placeholder="SELECT * FRO..tiraj_vizitki..." />
+            <marker date="1412081973967" expanded="true" signature="3446:3490" placeholder="SELECT * FRO..tiraj_vizitki..." />
+            <marker date="1412081973967" expanded="true" signature="3889:3913" placeholder="SELECT * FRO..paper_type..." />
+            <marker date="1412081973967" expanded="true" signature="4300:4358" placeholder="SELECT id, t..paper_type..." />
+            <marker date="1412081973967" expanded="true" signature="4808:4832" placeholder="SELECT * FRO..dop_uslugi..." />
+            <marker date="1412081973967" expanded="true" signature="5244:5283" placeholder="SELECT * FRO..page..." />
+            <marker date="1412081973967" expanded="true" signature="5819:5912" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="5819:5910" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="5819:5971" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="5819:5972" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="5819:5976" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6344:6717" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6344:6635" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6344:6633" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6344:6630" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6344:6512" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6480:6717" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6491:6835" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6491:6717" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6491:6717" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6491:6553" placeholder="INSERT INTO ..." />
+            <marker date="1412081973967" expanded="true" signature="6848:6904" placeholder="/*==========..." />
+          </folding>
         </state>
       </provider>
     </entry>
