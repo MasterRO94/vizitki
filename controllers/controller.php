@@ -93,59 +93,88 @@
 /*==========================================================*/
 
 
-/*=============== SAVE ORDER CHECKS ====================== */
-    function checkAndSaveOrder(){
-        if(isset($_POST['wishes'])){
+/*=============== OFFER ORDER ====================== */
+    function offerOrder(){
+        if(isset($_POST['confirm_copy_rights'])){
+            if(isset($_POST['wishes'])){
 
-            $save = array();
+                $save = array();
 
-            $save['wishes'] = $_POST['wishes'];
+                $save['wishes'] = $_POST['wishes'];
 
-            $error = '';
+                $error = '';
 
-            if(!isset($_POST['printing_type'])){
-                $error .= '<li>Не выбран тираж</li>';
-            }else{
-                $save['printing_type'] = $_POST['printing_type'];
-            }
-
-            if(!isset($_POST['paper_type'])){
-                $save['paper_type'] = $_POST['paper_type'];
-            }
-
-            if(!isset($_POST['kolvo'])){
-                $error .= '<li>Не выбрано количество</li>';
-            }else{
-                $save['kolvo'] = $_POST['kolvo'];
-            }
-
-            if(isset($_POST['edit_template'])){
-                $save['type'] = 'Визитки';
-            }else{
-                $save['type'] = 'Макеты';
-            }
-
-            if(isset($_POST['TMPL'])){
-                $save['type_sides'] = $_POST['TMPL']['type_side'];
-                $save['img_out'] = $_POST['TMPL']['img_out'];
-            }else{
-                $save['type_sides'] = NULL;
-                $save['img_out'] = NULL;
-            }
-
-            if($error == ''){
-                if(saveOrder($save)){
-                    redirectToHomepage('Ваша заявка успено отправлена');
+                if(!isset($_POST['printing_type'])){
+                    $error .= '<li>Не выбран тираж</li>';
                 }else{
+                    $save['printing_type'] = getPrintingType($_POST['printing_type']);
+                    if(!$save['printing_type']) $error .= 'Ошибка!';
+                }
+
+                if(!isset($_POST['paper_type'])){
+                    $error .= '<li>Не выбрано количество</li>';
+                }else{
+                    $save['paper_type'] = getPaperType($_POST['paper_type']);
+                }
+
+                if(!isset($_POST['kolvo'])){
+                    $error .= '<li>Не выбрано количество</li>';
+                }else{
+                    $save['count'] = $_POST['kolvo'] * $save['printing_type']['count'];
+                    $save['kolvo'] = $_POST['kolvo'];
+                }
+
+                if(isset($_POST['EXTRA'])){
+                    $extra = getExtra();
+                    foreach($extra as $ext){
+                        if(isset($_POST['EXTRA'][$ext['name']]))
+                            $save['dop_uslugi'] .= $_POST['EXTRA'][$ext['name']].',';
+                    }
+                }else{
+                    $save['dop_uslugi'] = NULL;
+                }
+
+                if(isset($_POST['edit_template'])){
+                    $save['type'] = 'Визитки';
+                }else{
+                    $save['type'] = 'Макеты';
+                }
+
+                if(isset($_POST['TMPL'])){
+                    $save['type_sides'] = $_POST['TMPL']['type_side'];
+                    $save['img_out'] = $_POST['TMPL']['img_out'];
+                }else{
+                    $save['type_sides'] = NULL;
+                    $save['img_out'] = NULL;
+                }
+
+
+
+                if($error == ''){
+                    unset($_SESSION['error']);
+                    unset($_SESSION['errors']);
+
+                    $totalSum = ($save['printing_type']['price'] + $save['paper_type']['price']) * $save['kolvo'];
+
+                    $_SESSION['basket'][] = array(
+                        'type' => $save['type'],
+                        'count' => $save['count'],
+                        'kolvo' => $save['kolvo'],
+                        'type_sides' => $save['type_sides'],
+                        'wishes' => $save['wishes'],
+                        'paper_type' => $save['paper_type'],
+                        'image_face' => $save['img_out'],
+                        'image_back' => $save['image_back'],
+                        'dop_uslugi' => $save['dop_uslugi'],
+                        'totalSum' => $totalSum,
+                    );
+                    redirectTo('/basket');
+
+                }else{
+                    setSession('errors', $error);
                     redirect();
                 }
-            }else{
-                setSession('errors', $error);
-                redirect();
             }
-
-
-
         }else{
             setSession('error', 'Ошибка!');
             redirect();
@@ -154,7 +183,33 @@
 /*==========================================================*/
 
 
+/*=============== OFFER ORDER ====================== */
+    function checkAndSaveOrder(){
+        if(!getSession('USER')){
+            if(!isset($_POST['USER']))
+                return false;
+            setSession('USER', array(
+                    'name' => $_POST['USER']['name'],
+                    'phone' => $_POST['USER']['phone'],
+                    'email' => $_POST['USER']['email'],
+                    'address' => $_POST['USER']['address'],
+                )
+            );
+        }
 
+
+
+        $orders = getSession('basket');
+
+        foreach($orders as $order){
+            saveOrder($order);
+            /*if(!saveOrder($order));
+            return false;*/
+        }
+
+        return true;
+    }
+/*==========================================================*/
 
 
 
@@ -198,6 +253,7 @@
             $bigButtonsMenu = getMenu('big_buttons');
             $tiraj = getTiraj();
             $template = getTemplate($id);
+            $paper_types = getPaperTypes();
             $page = getPageContent($view);
             if(!$page){
                 $page = '';
@@ -237,12 +293,28 @@
             }
         break;
 
+        //basket
+        case('basket'):
+
+        break;
+
+        //offer order
+        case('offerOrder'):
+            offerOrder();
+        break;
 
         //save order
         case('saveOrder'):
-            checkAndSaveOrder();
+            if(!checkAndSaveOrder())
+                redirect();
+            unset($_SESSION['basket']);
+            redirectTo('/basket', 'Ваш заказ успешно оформлен. С вами свяжутся в близжайшее время наши администраторы.');
         break;
 
+        // delete item from basket
+        case('delete_item_from_basket'):
+            deleteItemFromBasket($delete_item_id);
+        break;
 
         default:
             $view = 'home';

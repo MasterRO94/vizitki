@@ -137,6 +137,95 @@ function getTiraj(){
 /*============== Get Tiraj ================*/
 
 
+/*============== Get Tiraj ================*/
+function getPrintingType($id){
+    global $link;
+
+    $q = "SELECT * FROM tiraj_vizitki WHERE id='{$id}'";
+    $result = mysqli_query($link,$q);
+    if(!$result){
+        return NULL;
+    }
+
+    $pt = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $pt[] = $row;
+    }
+
+    if(count($pt) != 1) return false;
+
+    return $pt[0];
+}
+
+/*============== Get Tiraj ================*/
+
+
+
+/*============== Get Paper Types ================*/
+function getPaperTypes(){
+    global $link;
+
+    $q = "SELECT * FROM paper_type";
+    $result = mysqli_query($link,$q);
+    if(!$result){
+        return NULL;
+    }
+
+    $paper_type = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $paper_type[] = $row;
+    }
+
+    return $paper_type;
+}
+
+/*============== Get Paper Types ================*/
+
+
+/*============== Get Paper Type ================*/
+function getPaperType($id){
+    global $link;
+
+    $q = "SELECT id, title, price FROM paper_type WHERE id = '{$id}'";
+    $result = mysqli_query($link,$q);
+    if(!$result){
+        return NULL;
+    }
+
+    $paper_type = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $paper_type[] = $row;
+    }
+
+    if(count($paper_type) != 1 ) return false;
+
+    return $paper_type[0];
+}
+
+/*============== Get Paper Type ================*/
+
+
+/*============== Get Extra - Dop Uslugi ================*/
+    function getExtra(){
+        global $link;
+
+        $q = "SELECT * FROM dop_uslugi";
+        $result = mysqli_query($link,$q);
+        if(!$result){
+            return NULL;
+        }
+
+        $extra = array();
+        while($row = mysqli_fetch_assoc($result)){
+            $extra[] = $row;
+        }
+
+        return $extra;
+    }
+
+/*============== Get Tiraj ================*/
+
+
 
 /*============== Get PageContent ================*/
 function getPageContent($page){
@@ -160,17 +249,29 @@ function getPageContent($page){
 /*============== Get PageContent ================*/
 
 
-/*============== Save Order ================*/
-    function saveOrder($save){
+/*=================== Save Order =====================*/
+    function saveOrder($order){
         global $link;
 
-        foreach($save as $item){
-            if($item == '')
-                $item = NULL;
+        $user = getSession('USER');
+
+        if(!isset($user['user_id'])){
+            $q = "INSERT INTO `users` (`id`, `fio`, `phone`, `email`, `address`) VALUES (null, '{$user['name']}', '{$user['phone']}', '{$user['email']}', '{$user['address']}');";
+            $result = mysqli_query($link,$q);
+            $user['user_id'] = mysqli_insert_id($link);
+            if(!$result){
+                return false;
+            }
         }
 
-        $q = "INSERT INTO `orders` (`id`, `user_id`, `type`, `count`, `type_sides`, `wishes`, `paper_type`, `image_face`, `image_back`, `dop_uslgi`) VALUES(NULL, 1, '{$save['type']}', '{$save['kolvo']}', '{$save['type_sides']}', '{$save['wishes']}', NULL, '".$save['img_out']."', NULL, NULL)";
-        echo "$q";
+
+
+        /*print_arr($user);
+        echo '<br/>';
+        print_arr($_SESSION['basket']);
+        die;*/
+
+        $q = "INSERT INTO `orders` (`id`, `user_id`, `type`, `count`, `type_sides`, `wishes`, `paper_type`, `image_face`, `image_back`, `dop_uslugi`) VALUES(NULL, '{$user['user_id']}', '{$order['type']}', '{$order['kolvo']}', '{$order['type_sides']}', '{$order['wishes']}', '{$order['paper_type']['id']}', '".$order['image_face']."', '".$order['image_back']."', '{$order['dop_uslugi']}')";
         $result = mysqli_query($link,$q);
         if(!$result){
             return false;
@@ -178,7 +279,7 @@ function getPageContent($page){
         return true;
     }
 
-/*============== Get PageContent ================*/
+/*=================== Save Order =====================*/
 
 
 

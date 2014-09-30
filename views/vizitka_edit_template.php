@@ -1,6 +1,6 @@
 <?php
-    print_arr($_POST);
-?>
+/*    unset($_SESSION['basket']);
+*/?>
 
 <?php if($template): ?>
     <section id="editor" style="width: 960px;">
@@ -98,7 +98,7 @@
         <div class="clear"></div>
     </div><!-- .editor -->
 
-    <form class="validat form_style" method="post" action="<?=PATH?>/save/order" enctype='multipart/form-data'>
+    <form class="validat form_style" method="post" action="<?=PATH?>/offer/order" enctype='multipart/form-data'>
 
     <div class="like_h1">Поля заказа</div>
 
@@ -120,7 +120,7 @@
             <select data-error="" id="printingType" class="valid" name="printing_type">
                 <option data-cost="0"></option>
                 <?php foreach($tiraj as $t): ?>
-                    <option data-cost="<?=$t['price']?>" data-side="<?=$t['type_side']?>" value="<?=$t['count']?>">
+                    <option data-cost="<?=$t['price']?>" data-side="<?=$t['type_side']?>" value="<?=$t['id']?>">
                         <?=$t['text']?>
                     </option>
                 <?php endforeach; ?>
@@ -149,147 +149,20 @@
 
     <div id="paper-list-block">
         <ul id="paper-list-ul">
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-10" data-cost1="0" data-cost2="0" value="10">
-                    <label for="paperNum-10">Мелованная матовая</label>
-                </div>
-                <img src="/pic/none_paper.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 300 гр/м2</p>
-                    <p><span>Цвет:</span> белый</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-11" data-cost1="0" data-cost2="0" value="11">
-                    <label for="paperNum-11">Мелованная глянцевая</label>
-                </div>
-                <img src="/pic/none_paper.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 300 гр/м2</p>
-                    <p><span>Цвет:</span> белый</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-7" data-cost1="163" data-cost2="1464" value="7">
-                    <label for="paperNum-7">Keaykolour original tangerine</label>
-                </div>
-                <img src="/images/_paper_type/7.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 300 гр/м2</p>
-                    <p><span>Фактура:</span> гладкая</p>
-                    <p><span>Цвет:</span> апельсиновый</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-6" data-cost1="204" data-cost2="1789" value="6">
-                    <label for="paperNum-6">Rives tradition ice white</label>
-                </div>
-                <img src="/images/_paper_type/6.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 250 гр/м2</p>
-                    <p><span>Фактура:</span> фетр</p>
-                    <p><span>Цвет:</span> белый перламутровый</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-2" data-cost1="163" data-cost2="0" value="2">
-                    <label for="paperNum-2">Keaykolor embossing reiderr snow</label>
-                </div>
-                <img src="/images/_paper_type/2.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 300 гр/м2</p>
-                    <p><span>Фактура:</span> кора дерева</p>
-                    <p><span>Цвет:</span> белый</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-8" data-cost1="204" data-cost2="0" value="8">
-                    <label for="paperNum-8">Keaykolor embossing reiderr snow</label>
-                </div>
-                <img src="/images/_paper_type/8.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 300 гр/м2</p>
-                    <p><span>Фактура:</span> кора дерева</p>
-                    <p><span>Цвет:</span> белый</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-9" data-cost1="204" data-cost2="0" value="9">
-                    <label for="paperNum-9">Rives corn design</label>
-                </div>
-                <img src="/images/_paper_type/9.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 250 гр/м2</p>
-                    <p><span>Фактура:</span> сетка</p>
-                    <p><span>Цвет:</span> бежевый светлый</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-3" data-cost1="163" data-cost2="0" value="3">
-                    <label for="paperNum-3">Keaykolor original biscuit</label>
-                </div>
-                <img src="/images/_paper_type/3.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 300 гр/м2</p>
-                    <p><span>Фактура:</span> гладкая</p>
-                    <p><span>Цвет:</span> бежевый</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-1" data-cost1="277" data-cost2="0" value="1">
-                    <label for="paperNum-1">Majestic fresh mint</label>
-                </div>
-                <img src="/images/_paper_type/1.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 290 гр/м2</p>
-                    <p><span>Фактура:</span> гладкая металлизированная</p>
-                    <p><span>Цвет:</span> салатовый светлый</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-4" data-cost1="163" data-cost2="0" value="4">
-                    <label for="paperNum-4">Fedrigony sirio Tela sabbia</label>
-                </div>
-                <img src="/images/_paper_type/4.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 290 гр/м2</p>
-                    <p><span>Фактура:</span> лен</p>
-                    <p><span>Цвет:</span> кофе с молоком</p>
-                </div>
-            </li>
-            <li>
-                <div class="radioSelect">
-                    <input type="radio" name="paper_type" id="paperNum-5" data-cost1="163" data-cost2="0" value="5">
-                    <label for="paperNum-5">Rives corn traditions </label>
-                </div>
-                <img src="/images/_paper_type/5.jpg"/>
-                <p class="addCost">+0 грн за комплект</p>
-                <div class="infoPaper">
-                    <p><span>Плотность:</span> 250 гр/м2</p>
-                    <p><span>Фактура:</span> фетр</p>
-                    <p><span>Цвет:</span> бежевый светлый</p>
-                </div>
-            </li>
+            <?php foreach($paper_types as $paper): ?>
+                <li>
+                    <div class="radioSelect">
+                        <input type="radio" name="paper_type" id="paperNum-<?=$paper['id']?>" data-cost1="<?=$paper['price']?>" data-cost2="0" value="<?=$paper['id']?>">
+                        <label for="paperNum-<?=$paper['id']?>"><?=$paper['title']?></label>
+                    </div>
+                    <img src="<?=PATH.'/uploads/paper_type/'.$paper['image']?>"/>
+                    <p class="addCost">+0 грн за комплект</p>
+                    <div class="infoPaper">
+                        <p><span>Плотность:</span> <?=$paper['density']?> гр/м2</p>
+                        <p><span>Цвет:</span> <?=$paper['color']?></p>
+                    </div>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </div>
 
@@ -297,7 +170,7 @@
 
             <div class="row checkbox-style">
                 <div class="controls">
-                    <input id="confirm-author" type="checkbox" name="" class="valid" />
+                    <input id="confirm-author" type="checkbox" name="confirm_copy_rights" class="valid" />
                     <label for="confirm-author" class="simple-label">Оформляя заказ, я подтверждаю, что не нарушаю чьих-либо авторских прав на макет в целом, либо на его составные элементы.</label>
                 </div>
             </div>

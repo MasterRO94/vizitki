@@ -16,10 +16,11 @@ function redirect(){
     exit;
 }
 
-// redirect To HomePage
-function redirectToHomepage($message=NULL){
-    header("Location: ".PATH);
-    setSession('msg', $message);
+// redirect To
+function redirectTo($url, $message=null){
+
+    setSession('success', $message);
+    header("Location: ".PATH.$url);
     exit;
 }
 
@@ -36,3 +37,7 @@ function getSession($name){
     return $_SESSION[$name];
 }
 
+function deleteItemFromBasket($id){
+    unset($_SESSION['basket'][$id]);
+    redirect();
+}
