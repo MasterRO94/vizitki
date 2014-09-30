@@ -22,7 +22,7 @@ define('ASSET', PATH.'/'.VIEW);
 define('TITLE','Визитка. Печать, изготовление, образцы визиток. Заказать, сделать (создать) креативные, стильные, необычные, эксклюзивные визитки онлайн недорого — 100vizitok');
 
 // admin
-define('ADMIN', 'admin/');
+define('ADMIN', '/admin/');
 
 // folder with content (images etc.)
 define('VIZITKAIMG', PATH.'/uploads/');

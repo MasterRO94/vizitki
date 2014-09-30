@@ -10,7 +10,7 @@ $url = str_replace('/vizitki', '', $_SERVER['REQUEST_URI']);
 
 #echo '<br><hr>';
 
-global $routes;
+
 $routes = array(
     array('url' => '', 'view' => 'home'),
     array('url' => '/', 'view' => 'home'),
@@ -41,6 +41,13 @@ $routes = array(
 
     array('url' => '/basket', 'view' => 'basket'),
     array('url' => '#^/basket/delete/(?P<delete_item_id>\d+)#i', 'view' => 'delete_item_from_basket'),
+
+
+    /********************
+        ADMIN PANEL
+     ********************/
+    array('url' => '/admin', 'view' => 'admin_orders'),
+
 
 );
 
