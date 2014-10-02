@@ -1,0 +1,26 @@
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+    th,td{
+        border: 1px solid #555555;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    thead{
+        background: #5959ff;
+        color: #ffffff;
+    }
+
+.forCanvas{
+    display: none;
+}
+canvas{
+    display: none;
+}
+
+
+footer{
+    padding: 20px;
+}

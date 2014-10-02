@@ -270,7 +270,7 @@ function getPageContent($page){
         print_arr($_SESSION['basket']);
         die;*/
 
-        $q = "INSERT INTO `orders` (`id`, `user_id`, `type`, `count`, `type_sides`, `wishes`, `paper_type`, `image_face`, `image_back`, `dop_uslugi`) VALUES(NULL, '{$user['user_id']}', '{$order['type']}', '{$order['kolvo']}', '{$order['type_sides']}', '{$order['wishes']}', '{$order['paper_type']['id']}', '".$order['image_face']."', '".$order['image_back']."', '{$order['dop_uslugi']}')";
+        $q = "INSERT INTO `orders` (`id`, `user_id`, `type`, `count`, `type_sides`, `wishes`, `paper_type`, `image_face`, `image_back`, `dop_uslugi`, `created_at`, `updated_at`, `status`, `totalSum`) VALUES(NULL, '{$user['user_id']}', '{$order['type']}', '{$order['kolvo']}', '{$order['type_sides']}', '{$order['wishes']}', '{$order['paper_type']['id']}', '".$order['image_face']."', '".$order['image_back']."', '{$order['dop_uslugi']}', NOW(), NOW(), 'Новый', {$order['totalSum']})";
         $result = mysqli_query($link,$q);
         if(!$result){
             return false;

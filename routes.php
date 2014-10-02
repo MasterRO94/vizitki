@@ -8,7 +8,7 @@
 
 $url = str_replace('/vizitki', '', $_SERVER['REQUEST_URI']);
 
-#echo '<br><hr>';
+// echo '<br><hr>';
 
 
 $routes = array(
@@ -46,7 +46,8 @@ $routes = array(
     /********************
         ADMIN PANEL
      ********************/
-    array('url' => '/admin', 'view' => 'admin_orders'),
+    array('url' => '#/admin/?$#', 'view' => 'admin_orders'),
+    array('url' => '#^/admin/order/(?P<order_id>[a-z0-9-]+)/?$#i', 'view' => 'admin_order'),
 
 
 );
@@ -63,6 +64,7 @@ foreach($routes as $route){
             // $alias - vizitka template alias
             // $id - vizitka template id
             // $delete_item_id
+            // $order_id
 
             $view = $route['view'];
         }

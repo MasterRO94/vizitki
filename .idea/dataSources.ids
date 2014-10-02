@@ -1578,6 +1578,14 @@
       <column name="page_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="dop_uslugi" schema="" catalog="vizitki" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <column name="price100" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="price1000" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="footer_menu" schema="" catalog="vizitki" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="title" sqlType="VARCHAR" length="40" precision="0" nullable="false" jdbcType="12"/>
@@ -1594,6 +1602,23 @@
       <column name="page_id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="orders" schema="" catalog="vizitki" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="type" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12"/>
+      <column name="count" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="type_sides" sqlType="TINYINT" length="3" precision="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="wishes" sqlType="TEXT" length="65535" precision="0" nullable="false" jdbcType="-1"/>
+      <column name="paper_type" sqlType="VARCHAR" length="120" precision="0" nullable="true" jdbcType="12"/>
+      <column name="image_face" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="false" jdbcType="-1"/>
+      <column name="image_back" sqlType="LONGTEXT" length="2147483647" precision="0" nullable="true" jdbcType="-1"/>
+      <column name="dop_uslugi" sqlType="VARCHAR" length="40" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATE" length="10" precision="0" nullable="false" jdbcType="91"/>
+      <column name="updated_at" sqlType="DATE" length="10" precision="0" nullable="false" jdbcType="91"/>
+      <column name="status" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12" def="J9Cd0L7QstGL0Lkn"/>
+      <column name="totalSum" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="page" schema="" catalog="vizitki" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="name" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
@@ -1603,6 +1628,16 @@
       <column name="text" sqlType="TEXT" length="65535" precision="0" nullable="true" jdbcType="-1" remarks="cGFnZSB0ZXh0"/>
       <primary-key name="PRIMARY" columns="id"/>
       <index name="name" unique="true" columns="name"/>
+    </table>
+    <table name="paper_type" schema="" catalog="vizitki" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="image" sqlType="VARCHAR" length="200" precision="0" nullable="false" jdbcType="12"/>
+      <column name="price" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="density" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="facture" sqlType="VARCHAR" length="200" precision="0" nullable="true" jdbcType="12"/>
+      <column name="color" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="services" schema="" catalog="vizitki" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
@@ -1621,6 +1656,7 @@
     <table name="template" schema="" catalog="vizitki" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="group_alias" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12"/>
       <column name="height" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="width" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="offset" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
@@ -1637,14 +1673,22 @@
       <column name="image" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
+    <table name="tiraj_vizitki" schema="" catalog="vizitki" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="count" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="text" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
+      <column name="price" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="type_side" sqlType="TINYINT" length="3" precision="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
     <table name="users" schema="" catalog="vizitki" type="TABLE">
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="fio" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
       <column name="phone" sqlType="VARCHAR" length="15" precision="0" nullable="false" jdbcType="12"/>
       <column name="email" sqlType="VARCHAR" length="40" precision="0" nullable="false" jdbcType="12"/>
       <column name="address" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
-      <column name="login" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
-      <column name="password" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <column name="login" sqlType="VARCHAR" length="100" precision="0" nullable="true" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
   </data-source>

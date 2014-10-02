@@ -1,4 +1,8 @@
 $(document).ready(function() {
+
+	var MyBaseURL = 'http://localhost/vizitki/';
+
+
     var textField = $('#cardEditorField');
     var textControl = $('#textEditControl');
     var mainField = $('#cardMainEditor');
@@ -129,7 +133,7 @@ $(document).ready(function() {
             imgC = $('<div>').addClass('imgControl'),
             imgP = $('<div>').addClass('imgPreview');
 
-        img = $('<img src="http://localhost/vizitki/uploads/_temp/'+last_name+'">');
+        img = $('<img src="'+MyBaseURL+'uploads/_temp/'+last_name+'">');
         img.appendTo(imgP);
         imgP.appendTo(imgC);
         imgC.appendTo(li);
@@ -139,7 +143,7 @@ $(document).ready(function() {
         li.prependTo('#sortableBlock');
 
         var imgCont = $('<div>').addClass('imgMove').attr('data-id', id);
-        var imgm = $('<img src="http://localhost/vizitki/uploads/_temp/'+last_name+'" alt="">');
+        var imgm = $('<img src="'+MyBaseURL+'uploads/_temp/'+last_name+'" alt="">');
         imgm.appendTo(imgCont);
         imgCont.appendTo(mainField);
 
@@ -399,7 +403,7 @@ $(document).ready(function() {
                         li.css('opacity', 0.2);
                     }
 
-                    img = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'">');
+                    img = $('<img src="'+MyBaseURL+'uploads/templates/'+liItm.data_name+'">');
                     img.appendTo(imgP);
                     imgP.appendTo(imgC);
                     imgC.appendTo(liImg);
@@ -409,7 +413,7 @@ $(document).ready(function() {
                     liImg.appendTo('#sortableBlock');
 
                     var imgCont = $('<div>').addClass('imgMove').attr('style', liItm.styleImg).attr('data-id', liItm.data_id);
-                    var imgm = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'" alt="">');
+                    var imgm = $('<img src="'+MyBaseURL+'uploads/templates/'+liItm.data_name+'" alt="">');
                     imgm.appendTo(imgCont);
                     imgCont.appendTo(mainField);
 
@@ -468,7 +472,7 @@ $(document).ready(function() {
                             li.css('opacity', 0.2);
                         }
 
-                        img = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'">');
+                        img = $('<img src="'+MyBaseURL+'/uploads/templates/'+liItm.data_name+'">');
                         img.appendTo(imgP);
                         imgP.appendTo(imgC);
                         imgC.appendTo(liImg);
@@ -478,7 +482,7 @@ $(document).ready(function() {
                         liImg.appendTo('#sortableBlock');
 
                         var imgCont = $('<div>').addClass('imgMove').attr('style', liItm.styleImg).attr('data-id', liItm.data_id);
-                        var imgm = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'" alt="">');
+                        var imgm = $('<img src="'+MyBaseURL+'uploads/templates/'+liItm.data_name+'" alt="">');
                         imgm.appendTo(imgCont);
                         imgCont.appendTo(mainField);
 
@@ -539,7 +543,7 @@ $(document).ready(function() {
                             li.css('opacity', 0.2);
                         }
 
-                        img = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'">');
+                        img = $('<img src="'+MyBaseURL+'/uploads/templates/'+liItm.data_name+'">');
                         img.appendTo(imgP);
                         imgP.appendTo(imgC);
                         imgC.appendTo(liImg);
@@ -549,7 +553,7 @@ $(document).ready(function() {
                         liImg.appendTo('#sortableBlock');
 
                         var imgCont = $('<div>').addClass('imgMove').attr('style', liItm.styleImg).attr('data-id', liItm.data_id);
-                        var imgm = $('<img src="http://localhost/vizitki/uploads/templates/'+liItm.data_name+'" alt="">');
+                        var imgm = $('<img src="'+MyBaseURL+'uploads/templates/'+liItm.data_name+'" alt="">');
                         imgm.appendTo(imgCont);
                         imgCont.appendTo(mainField);
 

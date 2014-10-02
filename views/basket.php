@@ -54,14 +54,17 @@
                 <strong>ИТОГО: <?=$totalSum?></strong>
             </p>
 
+
             <section class="saveOrder">
-                <div class="links">
-                    <ul id="tabs">
-                        <li><a href="#">Новый покупатель</a></li>
-                        <li><a href="#">Я уже зарегестрированн</a></li>
-                    </ul>
-                </div>
                 <form action="<?=PATH?>/save/order" method="post" name="saveOrder">
+                    <?php if(!getSession('USER')): ?>
+                    <div class="links">
+                        <ul id="tabs">
+                            <li><a href="#">Новый покупатель</a></li>
+                            <li><a href="#">Я уже зарегестрированн</a></li>
+                        </ul>
+                    </div>
+
                     <div class="row">
                         <label class="label">ФИО</label>
                         <div class="controls">
@@ -103,7 +106,7 @@
                             <div class="help">Введите ваше телефон</div>
                         </div>
                     </div>
-
+                    <?php endif; ?>
                     <div class="row">
                             <input type="submit" class="submit" value="Оформить заказ" />
                     </div>

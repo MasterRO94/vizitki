@@ -73,9 +73,14 @@
     /*------------------------------------------
     //           CONVERT IMAGE TO PNG          //
     -------------------------------------------*/
-/*    if($_POST['doImage']){
-        $data = $_POST['data'];
-            saveUserTemplate($data);
+    /*if($_POST['doImage']){
+        $data = $_POST['dataImg'];
+        $img = str_replace('data:image/png;base64,', '', $data);
+        $img = str_replace(' ', '+', $img);
+        $name = uniqid();
+        $result = file_put_contents("/uploads/_tmp/$name.png", base64_decode($img));
+
+            echo 'OK';
         exit;
 
     }*/
@@ -214,6 +219,13 @@
 /*=================================================================================================
 -------------------      DOWNLOAD CONTENT FOR VIEWS AND SWITCH FUNCTIONS      ---------------------
 ===================================================================================================*/
+    // if admin panel
+    $admin = strpos($url, 'admin');
+    if ($admin !== false){
+        require_once './admin/index.php';
+        exit();
+    }
+
     switch($view){
         // homepage
         case('home'):

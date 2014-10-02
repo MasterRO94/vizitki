@@ -1,8 +1,8 @@
 <?php defined('VIZITKI') or die('Access denied'); ?>
 
-        <section class="footer">
+        <footer>
             FOOTER
-        </section>
+        </footer>
 
 
         </body>
