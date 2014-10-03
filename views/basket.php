@@ -3,6 +3,9 @@
     <div class="breadcrumbs">
         <span><a href="/">Главная</a></span> <span> <span>Оформление заказа</span>
     </div>
+
+    <?php print_arr($_SESSION) ?>
+
     <?php if($msg = getSession('success')): ?>
         <div class="success"><?=$msg?></div>
         <?php unset($_SESSION['success']); ?>
@@ -23,7 +26,13 @@
                     <?php $i=1; $totalSum=0; foreach($basket as $item): ?>
                         <tr>
                             <td><a href="<?=PATH.'/basket/delete/'.($i-1)?>">del</a></td>
-                            <td><img style="max-width: 100px; max-height: 60px" src="<?=$item['image_face']?>" alt="<?=$item['type']?>"/></td>
+                            <td>
+                                <img style="max-width: 100px; max-height: 60px" src="<?=$item['image_face']?>" alt="<?=$item['type']?>"/>
+                                <?php if($item['image_back'] != NULL): ?>
+                                    <br/>
+                                    <img style="max-width: 100px; max-height: 60px" src="<?=$item['image_back']?>" alt="<?=$item['type']?>"/>
+                                <?php endif; ?>
+                            </td>
                             <td>
                                 <?=$item['type']?>,
                                 количество <?=$item['count']?> штук

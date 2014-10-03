@@ -78,3 +78,4 @@ if($error404){
     include VIEW.'error404.php';
     exit();
 }
+

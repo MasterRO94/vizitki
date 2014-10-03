@@ -2,6 +2,8 @@
 
 <?php
 
+    session_start();
+
     $admin_index = false;
     if(!isset($url)){
         $admin_index = true;
@@ -32,6 +34,25 @@
                 setSession('admin', array('error' => 'database_error' ));
             }else{
                 unset($_SESSION['admin']['error']);
+            }
+
+            $tiraj = getTiraj($order['tiraj']);
+
+            if(!$tiraj){
+                setSession('admin', array('error' => 'database_error' ));
+            }
+
+
+
+            if(!empty($order['paper_type'])){
+                $paper = getPaperType($order['paper_type']);
+            }
+
+            if(isset($_POST['edit_order'])){
+                $order_id = $_POST['order_id'];
+                $order_status= $_POST['order_status'];
+                editOrder($order_id, $order_status);
+                redirect();
             }
 
         break;

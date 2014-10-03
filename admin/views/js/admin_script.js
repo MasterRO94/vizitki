@@ -1,6 +1,10 @@
 function saveImage(name) {
-    $('body');
-    html2canvas($(".order_info_img"), {
+    var image = $(".order_info_img");
+    var height = image.height();
+    var width = image.width();
+    image.css({'width':'606px', 'height':'348px'});
+    image.find('img').css({'width':'606px', 'height':'348px'});
+    html2canvas(image, {
         onrendered: function(canvas) {
             theCanvas = canvas;
             var forCanvas = $('.forCanvas');
@@ -17,7 +21,8 @@ function saveImage(name) {
             forCanvas.empty();
         }
     });
-
+    image.css({'width': width+'px', 'height': height+'px'});
+    image.find('img').css({'width': width+'px', 'height': height+'px'});
 
     return false;
 }

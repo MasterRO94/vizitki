@@ -1,4 +1,4 @@
-function doImage() {
+function doImage(side) {
     html2canvas($("#cardMainEditor"), {
         onrendered: function(canvas) {
             theCanvas = canvas;
@@ -7,7 +7,7 @@ function doImage() {
             // Convert and download as image
             // Canvas2Image.saveAsPNG(canvas);
 
-            var out = $("#img_out");
+            var out = $("#img_out_"+side);
 
             out.append(canvas);
 
@@ -28,7 +28,7 @@ function doImage() {
 
 
             out.append(Canvas2Image.convertToPNG(canvas));
-            $('#img-out').val(out.find('img').attr('src'));
+            $('#img-out-'+side).val(out.find('img').attr('src'));
 
             // Clean up
             //document.body.removeChild(canvas);

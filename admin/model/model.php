@@ -85,6 +85,19 @@ function getOrder($id){
 /*======================= GET ORDER ===========================*/
 
 
+/*======================= EDIT ORDER STATUS===========================*/
+function editOrder($id, $status){
+    global $link;
+
+    $q = "UPDATE orders SET status='{$status}', updated_at=NOW() WHERE id={$id}";
+    $result = mysqli_query($link, $q);
+    if(!$result) return false;
+
+    return true;
+}
+/*======================= EDIT ORDER STATUS ===========================*/
+
+
 /*======================= GET USER FOR ORDER ===========================*/
 function getUserForOrder($id){
     global $link;
@@ -103,8 +116,48 @@ function getUserForOrder($id){
 }
 /*======================= GET USER FOR ORDER ===========================*/
 
+function getPaperType($id){
+    global $link;
 
+    $q = "SELECT id, title, price FROM paper_type WHERE id = '{$id}'";
+    $result = mysqli_query($link,$q);
+    if(!$result){
+        return NULL;
+    }
 
+    $paper_type = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $paper_type[] = $row;
+    }
+
+    if(count($paper_type) != 1 ) return false;
+
+    return $paper_type[0];
+}
+
+/*============== Get Paper Type ================*/
+
+/*============== Get Tiraj ================*/
+function getTiraj($id){
+    global $link;
+
+    $q = "SELECT * FROM tiraj_vizitki WHERE id={$id}";
+    $result = mysqli_query($link,$q);
+    if(!$result){
+        return NULL;
+    }
+
+    $tiraj = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $tiraj[] = $row;
+    }
+
+    if(count($tiraj) != 1) return false;
+
+    return $tiraj[0];
+}
+
+/*============== Get Tiraj ================*/
 
 
 

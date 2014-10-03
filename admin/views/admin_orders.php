@@ -32,7 +32,7 @@
                         <td><?= $order['created_at'] ?></td>
                         <td><?= $order['updated_at'] ?></td>
                         <td><?=$order['status']?></td>
-                        <td><p><a href="<?=PATH.ADMIN?>order/<?=$order['id']?>">Редактировать</a></p><p><a href="#">Удалить</a></p></td>
+                        <td><p><a href="<?=PATH.ADMIN?>order/<?=$order['id']?>">Просмотр/Редактировать</a></p><p><a href="#">Удалить</a></p></td>
                     </tr>
                 <?php endforeach; ?>
                 <?php else: ?>

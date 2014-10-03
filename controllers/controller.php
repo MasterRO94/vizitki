@@ -2,6 +2,15 @@
 
 <?php
 
+/********* IF IT's ADMIN PANEL SKIP FRONTEND **********/
+// if admin panel
+$admin = strpos($url, 'admin');
+if ($admin !== false){
+    require_once './admin/index.php';
+    exit();
+}
+
+
     session_start();
 
     // INCLUDING MODEL
@@ -119,14 +128,14 @@
                 if(!isset($_POST['paper_type'])){
                     $error .= '<li>Не выбрано количество</li>';
                 }else{
-                    $save['paper_type'] = getPaperType($_POST['paper_type']);
+                    $save['paper_type'] = getPaperType((int)abs($_POST['paper_type']));
                 }
 
                 if(!isset($_POST['kolvo'])){
                     $error .= '<li>Не выбрано количество</li>';
                 }else{
-                    $save['count'] = $_POST['kolvo'] * $save['printing_type']['count'];
-                    $save['kolvo'] = $_POST['kolvo'];
+                    $save['tiraj'] = $save['printing_type']['id'];
+                    $save['kolvo'] = $_POST['kolvo'] != 0 ? (int)abs($_POST['kolvo']) : 1;
                 }
 
                 if(isset($_POST['EXTRA'])){
@@ -146,11 +155,16 @@
                 }
 
                 if(isset($_POST['TMPL'])){
-                    $save['type_sides'] = $_POST['TMPL']['type_side'];
-                    $save['img_out'] = $_POST['TMPL']['img_out'];
+                    $save['type_sides'] = (int)abs($_POST['TMPL']['type_side']);
+                    $save['img_out_1'] = $_POST['TMPL']['img_out_1'];
+                    if( $save['type_sides'] == 2)
+                        $save['img_out_2'] = $_POST['TMPL']['img_out_2'];
+                    else
+                        $save['img_out_2'] = NULL;
                 }else{
                     $save['type_sides'] = NULL;
-                    $save['img_out'] = NULL;
+                    $save['img_out_1'] = NULL;
+                    $save['img_out_2'] = NULL;
                 }
 
 
@@ -163,13 +177,13 @@
 
                     $_SESSION['basket'][] = array(
                         'type' => $save['type'],
-                        'count' => $save['count'],
+                        'tiraj' => $save['tiraj'],
                         'kolvo' => $save['kolvo'],
                         'type_sides' => $save['type_sides'],
                         'wishes' => $save['wishes'],
                         'paper_type' => $save['paper_type'],
-                        'image_face' => $save['img_out'],
-                        'image_back' => $save['image_back'],
+                        'image_face' => $save['img_out_1'],
+                        'image_back' => $save['img_out_2'],
                         'dop_uslugi' => $save['dop_uslugi'],
                         'totalSum' => $totalSum,
                     );
@@ -219,12 +233,7 @@
 /*=================================================================================================
 -------------------      DOWNLOAD CONTENT FOR VIEWS AND SWITCH FUNCTIONS      ---------------------
 ===================================================================================================*/
-    // if admin panel
-    $admin = strpos($url, 'admin');
-    if ($admin !== false){
-        require_once './admin/index.php';
-        exit();
-    }
+
 
     switch($view){
         // homepage

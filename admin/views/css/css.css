@@ -24,3 +24,17 @@ canvas{
 footer{
     padding: 20px;
 }
+
+#order{
+    width: 100%;
+}
+#order .order_info{
+    text-align: justify;
+    padding: 15px 20px;
+}
+#order .order_info_img{
+    width: 180px;
+}
+#order .order_info img{
+    width: 180px;
+}
