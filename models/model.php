@@ -51,6 +51,30 @@ mysqli_query($link,"SET NAMES 'UTF8'") or die('Cant set charset');
 /*============== Get Services ================*/
 
 
+/*============== Get Service Title ================*/
+    function getServiceTitle($alias){
+        global $link;
+
+        $q = "SELECT title FROM services WHERE alias = '{$alias}'";
+        $result = mysqli_query($link,$q);
+        if(!$result){
+            return NULL;
+        }
+
+        $title = array();
+        while($row = mysqli_fetch_assoc($result)){
+            $title[] = $row;
+        }
+        if(count($title) != 1) return false;
+
+
+        return $title[0]['title'];
+
+    }
+
+/*============== Get Services ================*/
+
+
 /*============== Get Group Templates ================*/
     function getGroupTemplates(){
         global $link;
@@ -117,10 +141,10 @@ function getTemplate($id){
 
 
 /*============== Get Tiraj ================*/
-function getTiraj(){
+function getTiraj($alias){
     global $link;
 
-    $q = "SELECT * FROM tiraj_vizitki";
+    $q = "SELECT * FROM tiraj_vizitki WHERE alias = '{$alias}'";
     $result = mysqli_query($link,$q);
     if(!$result){
         return NULL;
@@ -137,7 +161,7 @@ function getTiraj(){
 /*============== Get Tiraj ================*/
 
 
-/*============== Get Tiraj ================*/
+/*============== Get Printing Type ================*/
 function getPrintingType($id){
     global $link;
 
@@ -157,7 +181,7 @@ function getPrintingType($id){
     return $pt[0];
 }
 
-/*============== Get Tiraj ================*/
+/*============== Get Printing Type ================*/
 
 
 
@@ -279,16 +303,6 @@ function getPageContent($page){
     }
 
 /*=================== Save Order =====================*/
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1606,7 +1606,8 @@
       <column name="id" sqlType="INT UNSIGNED" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="user_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="type" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12"/>
-      <column name="count" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="tiraj" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <column name="kolvo" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="type_sides" sqlType="TINYINT" length="3" precision="0" nullable="false" jdbcType="-6" def="MQ=="/>
       <column name="wishes" sqlType="TEXT" length="65535" precision="0" nullable="false" jdbcType="-1"/>
       <column name="paper_type" sqlType="VARCHAR" length="120" precision="0" nullable="true" jdbcType="12"/>
@@ -1679,6 +1680,7 @@
       <column name="text" sqlType="VARCHAR" length="100" precision="0" nullable="false" jdbcType="12"/>
       <column name="price" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="type_side" sqlType="TINYINT" length="3" precision="0" nullable="false" jdbcType="-6" def="MQ=="/>
+      <column name="alias" sqlType="VARCHAR" length="150" precision="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="users" schema="" catalog="vizitki" type="TABLE">

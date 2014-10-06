@@ -31,8 +31,8 @@
                         <?php endif; ?>
                     </a>
                     <div class="service_info_bot">
-                        <a rel="nofollow" href="<?=PATH?>/catalog/upload_layout/<?=$service['alias']?>">Загрузите свой макет</a>
-                        <a rel="nofollow" href="<?=PATH?>/catalog/order_design/<?=$service['alias']?>">Закажите дизайн</a>
+                        <a rel="nofollow" href="<?=PATH?>/catalog/upload-layout/<?=$service['alias']?>">Загрузите свой макет</a>
+                        <a rel="nofollow" href="<?=PATH?>/catalog/order-design/<?=$service['alias']?>">Закажите дизайн</a>
                     </div>
                 </div>
             </div>

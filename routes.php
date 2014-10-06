@@ -1,7 +1,6 @@
 <?php defined('VIZITKI') or die('Access denied'); ?>
 
 <?php
-
 #    $url = $_SERVER['REQUEST_URI'];
 
 /*echo 'url= '.*/
@@ -32,6 +31,8 @@ $routes = array(
     array('url' => '/catalog/edit-template-vizitki/', 'view' => 'vizitka_edit_group_list'),
     array('url' => '#^/catalog/edit-template-vizitki/(?P<alias>[a-z0-9-]+)/?$#i', 'view' => 'vizitka_edit_template_list'),
     array('url' => '#^/catalog/edit-template-vizitki/([a-z0-9-]+)/(?P<id>\d+)#i', 'view' => 'vizitka_edit_template'),
+
+    array('url' => '#^/catalog/upload-layout/(?P<layout_alias>[a-z0-9-]+)/?$#i', 'view' => 'upload_layout'),
 
     array('url' => '/editor', 'view' => 'editor'),
     array('url' => '/upload-image', 'view' => 'uploadImageToEditor'),
@@ -64,6 +65,8 @@ foreach($routes as $route){
             // $alias - vizitka template alias
             // $id - vizitka template id
             // $delete_item_id
+            // $layout_alias
+            /**ADMIN**/
             // $order_id
 
             $view = $route['view'];

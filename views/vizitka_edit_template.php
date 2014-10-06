@@ -1,6 +1,6 @@
 <?php
-/*    unset($_SESSION['basket']);
-*/?>
+    unset($_SESSION['basket']);
+?>
 
 <?php if($template): ?>
     <section id="editor" style="width: 960px;">
@@ -212,8 +212,7 @@
             <input type="hidden" id="offset_tpl" name="TMPL[offset]" value="<?=$template['offset']?>" />
             <input type="hidden" id="type_side" name="TMPL[type_side]" value="1"/>
             <!-- converted to image code -->
-            <div id="img_out_1" style="display: none"><input type="hidden" id="img-out-1" name="TMPL[img_out_1]" value=""/></div>
-            <div id="img_out_2" style="display: none"><input type="hidden" id="img-out-2" name="TMPL[img_out_2]" value=""/></div>
+            <div id="img_out" style="display: none"><input type="hidden" id="img-out" name="TMPL[img_out]" value=""/></div>
         </form>
     </section>
 

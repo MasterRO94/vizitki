@@ -151,20 +151,17 @@ if ($admin !== false){
                 if(isset($_POST['edit_template'])){
                     $save['type'] = 'Визитки';
                 }else{
-                    $save['type'] = 'Макеты';
+                    $save['type'] = $_POST['type'];
                 }
 
                 if(isset($_POST['TMPL'])){
                     $save['type_sides'] = (int)abs($_POST['TMPL']['type_side']);
                     $save['img_out_1'] = $_POST['TMPL']['img_out_1'];
                     if( $save['type_sides'] == 2)
-                        $save['img_out_2'] = $_POST['TMPL']['img_out_2'];
-                    else
-                        $save['img_out_2'] = NULL;
+                        $save['img_out_'] = $_POST['TMPL']['img_out_2'];
                 }else{
                     $save['type_sides'] = NULL;
-                    $save['img_out_1'] = NULL;
-                    $save['img_out_2'] = NULL;
+                    $save['img_out'] = NULL;
                 }
 
 
@@ -182,8 +179,8 @@ if ($admin !== false){
                         'type_sides' => $save['type_sides'],
                         'wishes' => $save['wishes'],
                         'paper_type' => $save['paper_type'],
-                        'image_face' => $save['img_out_1'],
-                        'image_back' => $save['img_out_2'],
+                        'image_face' => $save['img_out'],
+                        'image_back' => $save['image_back'],
                         'dop_uslugi' => $save['dop_uslugi'],
                         'totalSum' => $totalSum,
                     );
@@ -195,7 +192,7 @@ if ($admin !== false){
                 }
             }
         }else{
-            setSession('error', 'Ошибка!');
+            setSession('errors', 'Ошибка!');
             redirect();
         }
     }
@@ -270,13 +267,25 @@ if ($admin !== false){
         case('vizitka_edit_template'):
             $editor = true;
             $bigButtonsMenu = getMenu('big_buttons');
-            $tiraj = getTiraj();
+            $tiraj = getTiraj('vizitki');
             $template = getTemplate($id);
             $paper_types = getPaperTypes();
             $page = getPageContent($view);
             if(!$page){
                 $page = '';
             }
+        break;
+
+        // upload template laypout
+        case('upload_layout'):
+            $editor = true;
+            $bigButtonsMenu = getMenu('big_buttons');
+            $title = getServiceTitle($layout_alias);
+            if(!$title || $title == NULL ) setSession('error', 'Database error');
+                else unset($_SESSION['error']);
+            $tiraj = getTiraj($layout_alias);
+            if($layout_alias == 'vizitki') $boo = 'foo'; $extra = getExtra();
+            $paper_types = getPaperTypes();
         break;
 
         //catalog text page

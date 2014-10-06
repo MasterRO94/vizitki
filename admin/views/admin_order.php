@@ -66,11 +66,14 @@
 
                     <p class="order_info_img">
                         <img src="<?=$order['image_face']?>" alt="<?=$order['type'].'-'.$order['id']?>"/>
-                        <?php if($order['image_back'] != NULL): ?>
-                            <img src="<?=$order['image_back']?>" alt="<?=$order['type'].'-'.$order['id']?>"/>
-                        <?php endif; ?>
                     </p>
                     <p class="preview"><a href="javascript:void(0);" class="saveImage" data-name="<?php $name = uniqid(); echo $name;?>">Сохранить шаблон</a></p>
+                    <?php if($order['image_back'] != NULL): ?>
+                    <p class="order_info_img">
+                        <img src="<?=$order['image_back']?>" alt="<?=$order['type'].'-'.$order['id']?>"/>
+                    </p>
+                    <p class="preview"><a href="javascript:void(0);" class="saveImage" data-name="<?php $name = uniqid(); echo $name;?>">Сохранить шаблоны</a></p>
+                    <?php endif; ?>
                     <div class="forCanvas"></div>
                 </td>
                 <td><?=$order['kolvo']?> * <?=$tiraj['price']?> <?php if($paper_check && $paper['price'] > 0) echo ' + '.$order['kolvo'].' * '.$paper['price'] ?>  <?php if($extra_check) echo ' + '.'' ?>  = <?=$order['totalSum']?></td>
