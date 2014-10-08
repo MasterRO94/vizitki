@@ -23,12 +23,41 @@
     <script type="text/javascript">
         $(document).ready(function() {
 
+            var overlay = $('#overlay'); // подложка, должна быть одна на странице
+            var open_modal = $('#open_uploader'); // все ссылки, которые будут открывать окна
+            var close = $('#close_window, #overlay'); // все, что закрывает модальное окно, т.е. крестик и оверлэй-подложка
+            var modal = $('#upload_window'); // все скрытые модальные окна
+
+            open_modal.click( function(event){ // ловим клик по ссылке с классом open_modal
+                event.preventDefault(); // вырубаем стандартное поведение
+                //var div = $(this).attr('form.html'); // возьмем строку с селектором у кликнутой ссылки -- WHAT THE FUCK?
+                overlay.fadeIn(400, //показываем оверлэй
+                    function(){ // после окончани показывания оверлэя
+                        modal // this selector is needed
+                            .css('display', 'block')
+                            .animate({opacity: 1, top: '50%', marginTop: '-265px'}, 200); // плавно показываем
+                    });
+            });
+
+            close.click( function(){ // ловим клик по крестику или оверлэю
+                modal // все модальные окна
+                    .animate({opacity: 0, top: '0'}, 200, // плавно прячем
+                    function(){ // после этого
+                        $(this).css('display', 'none');
+                        overlay.fadeOut(400); // прячем подложку
+                    }
+                );
+            });
+
+
             // В dataTransfer помещаются изображения которые перетащили в область div
             jQuery.event.props.push('dataTransfer');
 
-// Максимальное количество загружаемых изображений за одни раз
-            var maxFiles = 6;
+// Максимальное количество загружаемых изображений
+            var maxFiles = 5;
 
+// Количество уже загруженных
+            var uploadedFiles = 0;
 // Оповещение по умолчанию
             var errMessage = 0;
 
@@ -43,6 +72,8 @@
 
 // Метод при падении файла в зону загрузки
             $('#drop-files').on('drop', function(e) {
+                e.preventDefault();
+
                 // Передаем в files все полученные изображения
                 var files = e.dataTransfer.files;
                 // Проверяем на максимальное количество файлов
@@ -50,8 +81,8 @@
                     // Передаем массив с файлами в функцию загрузки на предпросмотр
                     loadInView(files);
                 } else {
-                    alert('Вы не можете загружать больше '+maxFiles+' изображений!');
-                    files.length = 0; return;
+                    alert('Вы не можете загружать больше 5 изображений!');
+                    files.length = 0; return false;
                 }
             });
 
@@ -70,8 +101,8 @@
                     });
 
                 } else {
-                    alert('Вы не можете загружать больше '+maxFiles+' изображений!');
-                    files.length = 0;
+                    alert('Вы не можете загружать больше 5 изображений!');
+                    files.length = 0; return false;
                 }
             });
 
@@ -86,7 +117,9 @@
                     // Несколько оповещений при попытке загрузить не изображение
                     if (!files[index].type.match('image.*')) {
 
-                        if(errMessage == 0) {
+                        alert('Можно загружать только изображения!');
+
+                        /*if(errMessage == 0) {
                             $('#drop-files p').html('Эй! только изображения!');
                             ++errMessage
                         }
@@ -101,7 +134,7 @@
                         else if(errMessage == 3) {
                             $('#drop-files p').html("Хорошо! Продолжай в том же духе");
                             errMessage = 0;
-                        }
+                        }*/
 
                     } else {
 
@@ -110,7 +143,7 @@
                             // показываем область с кнопками
                             $('#upload-button').css({'display' : 'block'});
                         }
-                        else { alert('Вы не можете загружать больше '+maxFiles+' изображений!'); return; }
+                        else { alert('Вы не можете загружать больше 5 изображений!'); return false; }
 
                         // Создаем новый экземпляра FileReader
                         var fileReader = new FileReader();
@@ -154,6 +187,8 @@
                     // размещаем загруженные изображения
                     if($('#dropped-files > .image').length <= maxFiles) {
                         $('#dropped-files').append('<div id="img-'+i+'" class="image" style="background: url('+dataArray[i].value+'); background-size: cover;"> <a href="#" id="drop-'+i+'" class="drop-button">Удалить изображение</a></div>');
+                    }else{
+                        return false;
                     }
                 }
                 return false;
@@ -211,7 +246,7 @@
                 // Для каждого файла
                 $.each(dataArray, function(index, file) {
                     // загружаем страницу и передаем значения, используя HTTP POST запрос
-                    $.post('upload.php', dataArray[index], function(data) {
+                    $.post('', { data: dataArray[index], uploader: true}, function(data) {
 
                         var fileName = dataArray[index].name;
                         ++x;
@@ -232,62 +267,89 @@
                         }
 
                         // Формируем в виде списка все загруженные изображения
-                        // data формируется в upload.php
+                        // data формируется в uploadLayouts()
                         var dataSplit = data.split(':');
                         if(dataSplit[1] == 'загружен успешно') {
-                            $('#uploaded-files').append('<li><a href="images/'+dataSplit[0]+'">'+fileName+'</a> загружен успешно</li>');
+                            $('#uploaded-files').append('<li><a target="_blank" href="<?=PATH?>/uploads/_tmp/'+dataSplit[2]+'/'+dataSplit[0]+'">'+fileName+'</a> загружен успешно</li>');
+                            $('#layouts').append('<div data-file="'+fileName+'"><figure><img src="<?=PATH?>/uploads/_tmp/'+dataSplit[2]+'/'+dataSplit[0]+'" alt="'+fileName+'"/></<figure><p>Формат: '+dataSplit[3]+'</p><p>Размер: '+dataSplit[4]+'</p></figure></div>');
                         } else {
-                            $('#uploaded-files').append('<li><a href=\"images/' + data + '. Имя файла: ' + dataArray[index].name + '</li>');
+                            $('#uploaded-files').append('<li><a target="_blank" href=\"<?=PATH?>/uploads/_tmp/'+dataSplit[2]+'/' + data + '. Имя файла: ' + dataArray[index].name + '</li>');
                         }
 
                     });
                 });
                 // Показываем список загруженных файлов
                 $('#uploaded-files').show();
+
+                uploadedFiles += dataArray.length;
+                maxFiles = 5 - uploadedFiles;
+
                 return false;
             });
 
         });
-    </script>
+    </script><!--======================================================================================================== END SCRIPT -->
 
-    <div id="drop-files" ondragover="return false">
-        <p>Перетащите изображение сюда</p>
-        <form id="frm">
-            <input type="file" id="uploadbtn" multiple />
-        </form>
-    </div>
+    <section id="upload_window">
+        <div class="upload-window-wrapper">
+            <div id="close_window">X</div>
 
-    <!-- Область предварительного просмотра -->
-    <div id="uploaded-holder">
-        <div id="dropped-files">
-            <!-- Кнопки загрузить и удалить, а также количество файлов -->
-            <div id="upload-button">
-                <center>
-                    <span>0 Файлов</span>
-                    <a href="#" class="upload">Загрузить</a>
-                    <a href="#" class="delete">Удалить</a>
-                    <!-- Прогресс бар загрузки -->
-                    <div id="loading">
-                        <div id="loading-bar">
-                            <div class="loading-color"></div>
-                        </div>
-                        <div id="loading-content"></div>
+            <div class="uploader-window">
+                    <div id="drop-files" ondragover="return false">
+                        <p>Перетащите изображение сюда</p>
+                        <p><label for="uploadbtn">Или выбирите файлы на компьютере</label></p>
+                        <form id="frm">
+                            <input type="file" id="uploadbtn" multiple />
+                        </form>
                     </div>
-                </center>
+
+                <!-- Область предварительного просмотра -->
+                <div id="uploaded-holder">
+                    <div id="dropped-files">
+                        <!-- Кнопки загрузить и удалить, а также количество файлов -->
+                        <div id="upload-button">
+                            <center>
+                                <span>0 Файлов</span>
+                                <a href="#" class="upload">Загрузить</a>
+                                <a href="#" class="delete">Удалить</a>
+                                <!-- Прогресс бар загрузки -->
+                                <div id="loading">
+                                    <div id="loading-bar">
+                                        <div class="loading-color"></div>
+                                    </div>
+                                    <div id="loading-content"></div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <section class="clear"></section>
+                </div>
+
+                <!-- Список загруженных файлов -->
+                <div id="file-name-holder">
+
+                    <ul id="uploaded-files">
+                        <li><h3>Загруженные файлы</h3></li>
+                    </ul>
+                </div>
+
+                <section class="clear"></section>
             </div>
         </div>
-    </div>
-
-    <!-- Список загруженных файлов -->
-    <div id="file-name-holder">
-        <ul id="uploaded-files">
-            <h1>Загруженные файлы</h1>
-        </ul>
-    </div>
+    </section>
+    <section id="overlay"></section>
 
 
+    <a href="javascript:void(0)" id="open_uploader">Загрузить макеты</a>
 
     <form class="form_style" method="post" action="<?=PATH?>/offer/order" enctype='multipart/form-data'>
+
+        <section id="uploaded_templates">
+            <h4>Ваши макеты</h4>
+            <section id="layouts"></section>
+            <section class="clear"></section>
+        </section>
+
 
        <!-- <label for="upload_images">Загрузить макеты</label>
         <input type="file" name="images[]" id="upload_images" />-->

@@ -26,6 +26,99 @@ if ($admin !== false){
     // EDITOR FLAG - IF TRUE LOAD CSS AND JS RESOURCES
     $editor = false;
 
+    /**---------------------------------------------------
+    // DOWNLOAD USER TEMPLATE IMAGES FROM TEMP FOLDER   //
+    ---------------------------------------------------**/
+    function getLayouts(){
+        if(!getSession('USER')) return NULL;
+
+        $dir = 'uploads/_tmp/'.$_SESSION['USER']['user_id'].'/';
+
+        if($files = scandir($dir)){
+            unset($files[0]);
+            unset($files[1]);
+            $files = array_values($files);
+
+            for($i=0; $i<count($files); $i++){
+                $layouts[$i]['src'] = '/'.$dir.$files[$i];
+                $layouts[$i]['type'] = end(explode(".", $files[$i]));
+                $layouts[$i]['size'] = ceil(filesize($dir.$files[$i]) / 1024) < 1024 ? ceil(filesize($dir.$files[$i]) / 1024) . ' Кб' : (round(filesize($dir.$files[$i]) / 1024 / 1024, 2)) . ' Мб';
+            }
+
+
+        }else{
+            return false;
+        }
+
+        return $layouts;
+    }
+
+
+    /**---------------------------------------------------------------------------------------------------------------------//
+    // UPLOAD USER TEMPLATE IMAGE TO TEMP FOLDER   //
+    ----------------------------------------------**/
+    if(isset($_POST['uploader'])){
+        if(!getSession('USER')){
+           $user_id = createSessionUser();
+        }
+
+        uploadLayoutes();
+    }
+
+    function uploadLayoutes(){
+
+        // Все загруженные файлы помещаются в папку $uploaddir
+        $user_folder = getSession('USER');
+        $user_folder = $user_folder['user_id'];
+
+        mkdir('uploads/_tmp/'.$user_folder);
+
+        $uploaddir = 'uploads/_tmp/'.$user_folder.'/';
+
+        // Вытаскиваем необходимые данные
+        $file = $_POST['data']['value'];
+        $name = $_POST['data']['name'];
+
+        // Получаем расширение файла
+        $getMime = explode('.', $name);
+        $mime = end($getMime);
+
+        // Выделим данные
+        $data = explode(',', $file);
+
+        // Декодируем данные, закодированные алгоритмом MIME base64
+        $encodedData = str_replace(' ','+',$data[1]);
+        $decodedData = base64_decode($encodedData);
+
+        // Вы можете использовать данное имя файла, или создать произвольное имя.
+        // Мы будем создавать произвольное имя!
+        $randomName = substr_replace(sha1(microtime(true)), '', 12).'.'.$mime;
+
+        // Создаем изображение на сервере
+
+
+        if($mime == 'psd'){
+            echo 'PSD';
+            exit();
+        }else{
+            if(file_put_contents($uploaddir.$randomName, $decodedData)) {
+                $filesize = ceil(($uploaddir.$randomName) / 1024) < 1024 ? ceil(filesize($uploaddir.$randomName) / 1024) . ' Кб' : (round(filesize($uploaddir.$randomName) / 1024 / 1024, 2)) . ' Мб';
+                echo $randomName.":загружен успешно:".$user_folder.':'.$mime.':'.$filesize;
+            }
+            else {
+                // Показать сообщение об ошибке, если что-то пойдет не так.
+                echo "Что-то пошло не так. Убедитесь, что файл не поврежден!";
+            }
+        }
+
+
+        exit();
+
+    }
+
+    /************************ END UPLOADING USER TEMPLATES****************************/
+
+
 
     /*------------------------------------------
     // UPLOAD IMAGE TO TEMP FOLDER FOR EDITOR //
@@ -186,6 +279,8 @@ if ($admin !== false){
                     );
                     redirectTo('/basket');
 
+                    unset($_SESSION['errors']);
+
                 }else{
                     setSession('errors', $error);
                     redirect();
@@ -276,7 +371,7 @@ if ($admin !== false){
             }
         break;
 
-        // upload template laypout
+        // upload template layout
         case('upload_layout'):
             $editor = true;
             $bigButtonsMenu = getMenu('big_buttons');
@@ -284,8 +379,13 @@ if ($admin !== false){
             if(!$title || $title == NULL ) setSession('error', 'Database error');
                 else unset($_SESSION['error']);
             $tiraj = getTiraj($layout_alias);
-            if($layout_alias == 'vizitki') $boo = 'foo'; $extra = getExtra();
+            if($layout_alias == 'vizitki') $extra = getExtra();
             $paper_types = getPaperTypes();
+
+            $layouts = getLayouts();
+
+            print_arr($_SESSION);
+
         break;
 
         //catalog text page

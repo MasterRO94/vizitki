@@ -27,7 +27,7 @@ function saveImage(name, image) {
     setTimeout(function(){
         image.css({'width': width+'px', 'height': height+'px'});
         image.find('img').css({'width': width+'px', 'height': height+'px'});
-    },300);
+    },1000);
 
     return false;
 }

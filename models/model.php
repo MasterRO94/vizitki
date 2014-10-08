@@ -272,6 +272,23 @@ function getPageContent($page){
 
 /*============== Get PageContent ================*/
 
+/*function getLastUserId(){
+    global $link;
+
+    $q = "SELECT id FROM users ORDER BY id DESC LIMIT 1";
+    $result = mysqli_query($link,$q);
+    if(!$result){
+        return NULL;
+    }
+
+    $id = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $id[] = $row;
+    }
+
+    return $id[0]['id'];
+}*/
+
 
 /*=================== Save Order =====================*/
     function saveOrder($order){
@@ -286,6 +303,16 @@ function getPageContent($page){
             $_SESSION['USER']['user_id'] = $user['user_id'];
             if(!$result){
                 return false;
+            }
+        }else{
+            if(!isset($user['email'])){
+                $q = "INSERT INTO `users` (`id`, `fio`, `phone`, `email`, `address`) VALUES ({$user['user_id']}, '{$user['name']}', '{$user['phone']}', '{$user['email']}', '{$user['address']}');";
+                $result = mysqli_query($link,$q);
+                $user['user_id'] = mysqli_insert_id($link);
+                $_SESSION['USER']['user_id'] = $user['user_id'];
+                if(!$result){
+                    return false;
+                }
             }
         }
 

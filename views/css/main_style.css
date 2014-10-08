@@ -5,6 +5,10 @@
     height: 300px;
 }
 
-/*canvas{
+canvas{
     display: none;
-}*/
+}
+
+.clear{
+    clear: both;
+}

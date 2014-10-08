@@ -41,3 +41,18 @@ function deleteItemFromBasket($id){
     unset($_SESSION['basket'][$id]);
     redirect();
 }
+
+function createSessionUser(){
+    $d = date('d');
+    $m = date('m');
+    $y = date('Y');
+    $h = date('H');
+    $i = date('i');
+    $s = date('s');
+
+    $id = (int)$d . (int)$m . (int)$y . (int)$h . (int)$i . (int)$s;
+
+    $_SESSION['USER']['user_id'] = $id;
+
+    return $id;
+}

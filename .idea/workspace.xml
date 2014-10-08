@@ -35,7 +35,7 @@
       <file leaf-file-name="controller.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/controller.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="153" column="51" selection-start="5500" selection-end="5500" vertical-scroll-proportion="-20.76923" vertical-offset="2061" max-vertical-offset="6171">
+            <state line="83" column="30" selection-start="2434" selection-end="2434" vertical-scroll-proportion="-3.2692308" vertical-offset="1326" max-vertical-offset="7871">
               <folding />
             </state>
           </provider>
@@ -44,64 +44,44 @@
       <file leaf-file-name="model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="232" column="13" selection-start="5346" selection-end="5346" vertical-scroll-proportion="-7.0384617" vertical-offset="3761" max-vertical-offset="5610">
+            <state line="274" column="24" selection-start="6224" selection-end="6224" vertical-scroll-proportion="-9.153846" vertical-offset="4420" max-vertical-offset="6069">
               <folding>
-                <marker date="1412598223318" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
-                <marker date="1412598223318" expanded="true" signature="1628:1679" placeholder="SELECT title..services..." />
-                <marker date="1412598223318" expanded="true" signature="2166:2195" placeholder="SELECT * FRO..templates_group..." />
-                <marker date="1412598223318" expanded="true" signature="2661:2714" placeholder="SELECT * FRO..template..." />
-                <marker date="1412598223318" expanded="true" signature="3139:3180" placeholder="SELECT * FRO..template..." />
-                <marker date="1412598223318" expanded="true" signature="3601:3653" placeholder="SELECT * FRO..tiraj_vizitki..." />
-                <marker date="1412598223318" expanded="true" signature="4025:4069" placeholder="SELECT * FRO..tiraj_vizitki..." />
-                <marker date="1412598223318" expanded="true" signature="4476:4500" placeholder="SELECT * FRO..paper_type..." />
-                <marker date="1412598223318" expanded="true" signature="4887:4945" placeholder="SELECT id, t..paper_type..." />
-                <marker date="1412598223318" expanded="true" signature="5395:5419" placeholder="SELECT * FRO..dop_uslugi..." />
-                <marker date="1412598223318" expanded="true" signature="5831:5870" placeholder="SELECT * FRO..page..." />
-                <marker date="1412598223318" expanded="true" signature="6406:6563" placeholder="INSERT INTO ..." />
+                <marker date="1412761386570" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
+                <marker date="1412761386570" expanded="true" signature="1628:1679" placeholder="SELECT title..services..." />
+                <marker date="1412761386570" expanded="true" signature="2166:2195" placeholder="SELECT * FRO..templates_group..." />
+                <marker date="1412761386570" expanded="true" signature="2661:2714" placeholder="SELECT * FRO..template..." />
+                <marker date="1412761386570" expanded="true" signature="3139:3180" placeholder="SELECT * FRO..template..." />
+                <marker date="1412761386570" expanded="true" signature="3601:3653" placeholder="SELECT * FRO..tiraj_vizitki..." />
+                <marker date="1412761386570" expanded="true" signature="4025:4069" placeholder="SELECT * FRO..tiraj_vizitki..." />
+                <marker date="1412761386570" expanded="true" signature="4476:4500" placeholder="SELECT * FRO..paper_type..." />
+                <marker date="1412761386570" expanded="true" signature="4887:4945" placeholder="SELECT id, t..paper_type..." />
+                <marker date="1412761386570" expanded="true" signature="5395:5419" placeholder="SELECT * FRO..dop_uslugi..." />
+                <marker date="1412761386570" expanded="true" signature="5831:5870" placeholder="SELECT * FRO..page..." />
+                <marker date="1412761386570" expanded="true" signature="6257:6302" placeholder="SELECT id FR..users..." />
+                <marker date="1412761386570" expanded="true" signature="6720:6877" placeholder="INSERT INTO ..." />
+                <marker date="1412761386570" expanded="true" signature="7191:7362" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vizitka_edit_template.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/vizitka_edit_template.php">
+      <file leaf-file-name="functions.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/functions/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="4" selection-start="5489" selection-end="5597" vertical-scroll-proportion="-3.3461537" vertical-offset="1526" max-vertical-offset="3842">
-              <folding>
-                <element signature="e#5998#6020#0" expanded="true" />
-                <element signature="e#7132#7167#0" expanded="true" />
-                <element signature="e#8725#8747#0" expanded="true" />
-              </folding>
+            <state line="54" column="39" selection-start="1035" selection-end="1035" vertical-scroll-proportion="-15.730769" vertical-offset="509" max-vertical-offset="1071">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="upload_layout.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="upload_layout.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/upload_layout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="242" column="23" selection-start="10457" selection-end="10457" vertical-scroll-proportion="-15.884615" vertical-offset="3701" max-vertical-offset="6919">
+            <state line="273" column="79" selection-start="12080" selection-end="12080" vertical-scroll-proportion="0.7431694" vertical-offset="4233" max-vertical-offset="7973">
               <folding>
-                <element signature="e#14233#14268#0" expanded="true" />
-                <element signature="e#15874#15896#0" expanded="true" />
+                <element signature="e#17666#17701#0" expanded="true" />
+                <element signature="e#19307#19329#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="807" selection-end="807" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="646">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="head.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/blocks/head.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="77" selection-start="357" selection-end="357" vertical-scroll-proportion="0.2773893" vertical-offset="0" max-vertical-offset="429">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -116,7 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/views/js/plugins.js" />
         <option value="$PROJECT_DIR$/views/css/jquery-ui-1.10.1.min.css" />
         <option value="$PROJECT_DIR$/views/css/colorbox.css" />
         <option value="$PROJECT_DIR$/views/css/liValidForm.css" />
@@ -141,7 +120,6 @@
         <option value="$PROJECT_DIR$/views/blocks/editorResources.php" />
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/views/css/main_style.css" />
         <option value="$PROJECT_DIR$/admin/views/orders.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/admin/views/footer.php" />
@@ -155,18 +133,20 @@
         <option value="$PROJECT_DIR$/views/js/editor.js" />
         <option value="$PROJECT_DIR$/views/js/main_script.js" />
         <option value="$PROJECT_DIR$/views/basket.php" />
-        <option value="$PROJECT_DIR$/admin/views/css/css.css" />
         <option value="$PROJECT_DIR$/admin/views/admin_order.php" />
-        <option value="$PROJECT_DIR$/admin/views/js/admin_script.js" />
-        <option value="$PROJECT_DIR$/functions/functions.php" />
         <option value="$PROJECT_DIR$/views/home.php" />
         <option value="$PROJECT_DIR$/views/vizitka_edit_template.php" />
-        <option value="$PROJECT_DIR$/models/model.php" />
         <option value="$PROJECT_DIR$/routes.php" />
-        <option value="$PROJECT_DIR$/controllers/controller.php" />
-        <option value="$PROJECT_DIR$/views/upload_layout.php" />
         <option value="$PROJECT_DIR$/views/index.php" />
         <option value="$PROJECT_DIR$/views/blocks/head.php" />
+        <option value="$PROJECT_DIR$/views/css/uploader.css" />
+        <option value="$PROJECT_DIR$/admin/views/js/admin_script.js" />
+        <option value="$PROJECT_DIR$/functions/functions.php" />
+        <option value="$PROJECT_DIR$/models/model.php" />
+        <option value="$PROJECT_DIR$/views/css/main_style.css" />
+        <option value="$PROJECT_DIR$/admin/views/css/css.css" />
+        <option value="$PROJECT_DIR$/controllers/controller.php" />
+        <option value="$PROJECT_DIR$/views/upload_layout.php" />
       </list>
     </option>
   </component>
@@ -345,6 +325,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vizitki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vizitki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vizitki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vizitki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vizitki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vizitki" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -419,11 +453,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21661238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21661238" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38762215" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -628,13 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/css/main_style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="2" selection-start="96" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/error404.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="588">
@@ -730,13 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/js/main_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="65" selection-start="804" selection-end="804" vertical-scroll-proportion="0.86734694" vertical-offset="0" max-vertical-offset="850">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/controller/controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="25" selection-start="899" selection-end="899" vertical-scroll-proportion="0.42348754" vertical-offset="408" max-vertical-offset="1479">
@@ -760,23 +780,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/views/css/css.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="19" selection-start="496" selection-end="496" vertical-scroll-proportion="0.0" vertical-offset="177" max-vertical-offset="765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/views/admin_order.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="161" selection-start="2725" selection-end="2725" vertical-scroll-proportion="-6.730769" vertical-offset="998" max-vertical-offset="1785">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/views/js/admin_script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="11" selection-start="938" selection-end="938" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="918">
           <folding />
         </state>
       </provider>
@@ -788,54 +794,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="22" selection-start="285" selection-end="303" vertical-scroll-proportion="0.19928825" vertical-offset="126" max-vertical-offset="833">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/vizitka_edit_template.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="100" column="4" selection-start="5489" selection-end="5597" vertical-scroll-proportion="-3.3461537" vertical-offset="1526" max-vertical-offset="3842">
-          <folding>
-            <element signature="e#5998#6020#0" expanded="true" />
-            <element signature="e#7132#7167#0" expanded="true" />
-            <element signature="e#8725#8747#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="232" column="13" selection-start="5346" selection-end="5346" vertical-scroll-proportion="-7.0384617" vertical-offset="3761" max-vertical-offset="5610">
-          <folding>
-            <marker date="1412598223318" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
-            <marker date="1412598223318" expanded="true" signature="1628:1679" placeholder="SELECT title..services..." />
-            <marker date="1412598223318" expanded="true" signature="2166:2195" placeholder="SELECT * FRO..templates_group..." />
-            <marker date="1412598223318" expanded="true" signature="2661:2714" placeholder="SELECT * FRO..template..." />
-            <marker date="1412598223318" expanded="true" signature="3139:3180" placeholder="SELECT * FRO..template..." />
-            <marker date="1412598223318" expanded="true" signature="3601:3653" placeholder="SELECT * FRO..tiraj_vizitki..." />
-            <marker date="1412598223318" expanded="true" signature="4025:4069" placeholder="SELECT * FRO..tiraj_vizitki..." />
-            <marker date="1412598223318" expanded="true" signature="4476:4500" placeholder="SELECT * FRO..paper_type..." />
-            <marker date="1412598223318" expanded="true" signature="4887:4945" placeholder="SELECT id, t..paper_type..." />
-            <marker date="1412598223318" expanded="true" signature="5395:5419" placeholder="SELECT * FRO..dop_uslugi..." />
-            <marker date="1412598223318" expanded="true" signature="5831:5870" placeholder="SELECT * FRO..page..." />
-            <marker date="1412598223318" expanded="true" signature="6406:6563" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="58" selection-start="175" selection-end="175" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="1530">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="153" column="51" selection-start="5500" selection-end="5500" vertical-scroll-proportion="-20.76923" vertical-offset="2061" max-vertical-offset="6171">
           <folding />
         </state>
       </provider>
@@ -847,27 +808,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/upload_layout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="242" column="23" selection-start="10457" selection-end="10457" vertical-scroll-proportion="-15.884615" vertical-offset="3701" max-vertical-offset="6919">
-          <folding>
-            <element signature="e#14233#14268#0" expanded="true" />
-            <element signature="e#15874#15896#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="0" selection-start="807" selection-end="807" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="646">
-          <folding />
+          <folding>
+            <marker date="1412605055208" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1412605055208" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1412605055208" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/blocks/head.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="77" selection-start="357" selection-end="357" vertical-scroll-proportion="0.2773893" vertical-offset="0" max-vertical-offset="429">
+        <state line="7" column="77" selection-start="357" selection-end="357" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="272">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/css/uploader.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="277" column="12" selection-start="4677" selection-end="4677" vertical-scroll-proportion="0.0" vertical-offset="4380" max-vertical-offset="4947">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/js/main_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="65" selection-start="804" selection-end="804" vertical-scroll-proportion="0.86734694" vertical-offset="0" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="58" selection-start="175" selection-end="175" vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="1530">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/views/js/admin_script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="10" selection-start="937" selection-end="937" vertical-scroll-proportion="0.0" vertical-offset="228" max-vertical-offset="918">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/functions/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="39" selection-start="1035" selection-end="1035" vertical-scroll-proportion="-15.730769" vertical-offset="509" max-vertical-offset="1071">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/views/css/css.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="26" selection-start="186" selection-end="186" vertical-scroll-proportion="0.23129252" vertical-offset="0" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/css/main_style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="1" selection-start="124" selection-end="124" vertical-scroll-proportion="0.26020408" vertical-offset="0" max-vertical-offset="588">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="274" column="24" selection-start="6224" selection-end="6224" vertical-scroll-proportion="-9.153846" vertical-offset="4420" max-vertical-offset="6069">
+          <folding>
+            <marker date="1412761386570" expanded="true" signature="1149:1189" placeholder="SELECT * FRO..services..." />
+            <marker date="1412761386570" expanded="true" signature="1628:1679" placeholder="SELECT title..services..." />
+            <marker date="1412761386570" expanded="true" signature="2166:2195" placeholder="SELECT * FRO..templates_group..." />
+            <marker date="1412761386570" expanded="true" signature="2661:2714" placeholder="SELECT * FRO..template..." />
+            <marker date="1412761386570" expanded="true" signature="3139:3180" placeholder="SELECT * FRO..template..." />
+            <marker date="1412761386570" expanded="true" signature="3601:3653" placeholder="SELECT * FRO..tiraj_vizitki..." />
+            <marker date="1412761386570" expanded="true" signature="4025:4069" placeholder="SELECT * FRO..tiraj_vizitki..." />
+            <marker date="1412761386570" expanded="true" signature="4476:4500" placeholder="SELECT * FRO..paper_type..." />
+            <marker date="1412761386570" expanded="true" signature="4887:4945" placeholder="SELECT id, t..paper_type..." />
+            <marker date="1412761386570" expanded="true" signature="5395:5419" placeholder="SELECT * FRO..dop_uslugi..." />
+            <marker date="1412761386570" expanded="true" signature="5831:5870" placeholder="SELECT * FRO..page..." />
+            <marker date="1412761386570" expanded="true" signature="6257:6302" placeholder="SELECT id FR..users..." />
+            <marker date="1412761386570" expanded="true" signature="6720:6877" placeholder="INSERT INTO ..." />
+            <marker date="1412761386570" expanded="true" signature="7191:7362" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="30" selection-start="2434" selection-end="2434" vertical-scroll-proportion="-3.2692308" vertical-offset="1326" max-vertical-offset="7871">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/upload_layout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="273" column="79" selection-start="12080" selection-end="12080" vertical-scroll-proportion="0.7431694" vertical-offset="4233" max-vertical-offset="7973">
+          <folding>
+            <element signature="e#17666#17701#0" expanded="true" />
+            <element signature="e#19307#19329#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
