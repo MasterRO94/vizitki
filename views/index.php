@@ -19,7 +19,7 @@
 
             <?php require_once 'blocks/header.php' ?>
 
-            <section class="container">
+            <section class="container"> 
 
                 <?php include($view.'.php'); ?>
 

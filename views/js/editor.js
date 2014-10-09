@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	var MyBaseURL = 'http://localhost/vizitki/';
+	var MyBaseURL = 'http://art-vitalis.com.ua/test/vizitki/';
 
 
     var textField = $('#cardEditorField');
@@ -328,7 +328,7 @@ $(document).ready(function() {
 
     $(document).on('click','#save', function(event) {
         event.preventDefault();
-        doImage(1);
+        doImage();
 
         var str = '';
         var itm = $('#sortableBlock li');
@@ -356,8 +356,6 @@ $(document).ready(function() {
 
     $(document).on('click','#save1', function(event) {
         event.preventDefault();
-        doImage(2);
-
         var str = '';
         var itm = $('#sortableBlock li');
         var itmlen = itm.length;
@@ -588,5 +586,22 @@ $(document).ready(function() {
         }
         return false;
     });
+
+    /*-----------------------------------------------GENERATE-----------------------------------------------------*/
+    $('#generate_image').on('click',function(){
+        var str = $('#code_template').val();
+        var item_id = $('#item_id').val();
+        $.ajax({
+            type: 'POST',
+            url: '/ajax/create_image.php',
+            data: ({w:'606',h:'348',params_str:str,id:item_id}),
+            success: function(data){
+                if(data == true){
+                    console.log('OK!');
+                };
+            }
+        });
+
+    })
 
 });

@@ -1,7 +1,7 @@
 <?php
 
 // domen
-define('PATH', 'http://localhost/vizitki');
+define('PATH', 'http://art-vitalis.com.ua/test/vizitki');
 
 // denied access to php files
 define('VIZITKI', TRUE);
@@ -24,20 +24,20 @@ define('TITLE','Визитка. Печать, изготовление, обра
 // admin
 define('ADMIN', '/admin/');
 
-// folder with content (images etc.)
+// folder wuth content (images etc.)
 define('VIZITKAIMG', PATH.'/uploads/');
 
 // DB server
-define('HOST', 'localhost');
+define('HOST', 'artvital.mysql.ukraine.com.ua');
 
 // DB user
-define('USER', 'root');
+define('USER', 'artvital_vizitki');
 
 // DB user password
-define('PASS', '12345');
+define('PASS', '24k8rtuq');
 
 // DB name
-define('DB', 'vizitki');
+define('DB', 'artvital_vizitki');
 
 //admin email
 define('ADMIN_EMAIL', 'igoshin18@gmail.com');

@@ -338,6 +338,7 @@ if ($admin !== false){
             if(!$page){
                 $page = '';
             }
+
         break;
 
         // edit templates group list

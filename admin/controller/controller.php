@@ -2,7 +2,7 @@
 
 <?php
 
-    session_start();
+	session_start();
 
     $admin_index = false;
     if(!isset($url)){
@@ -15,8 +15,8 @@
         require_once './../functions/functions.php';
 
     }else{
-        require_once '/admin/model/model.php';
-
+        require_once './admin/model/model.php';
+		
         require_once 'functions/functions.php';
     }
 
@@ -70,13 +70,13 @@ if(($admin_index)){
     // FOOTER
     include VIEW.'footer.php';
 }else{
-    // HEAD
-    include ADMIN.VIEW.'head.php';
 
+    // HEAD
+    require '.'.ADMIN.VIEW.'head.php';
 
     // CONTENT
-    include ADMIN.VIEW.$view.'.php';
+    include '.'.ADMIN.VIEW.$view.'.php';
 
     // FOOTER
-    include ADMIN.VIEW.'footer.php';
+    include '.'.ADMIN.VIEW.'footer.php';
 }

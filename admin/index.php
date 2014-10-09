@@ -5,7 +5,12 @@ define('VIZITKI', TRUE);
 
 
 // include file configurations
-require_once '../config.php';
+if(!isset($url)){
+	require_once '../config.php';
+}else{
+	require_once './config.php';
+}
+
 
 
 
