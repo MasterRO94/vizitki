@@ -40,12 +40,10 @@ if ($admin !== false){
             $files = array_values($files);
 
             for($i=0; $i<count($files); $i++){
-                $layouts[$i]['src'] = '/'.$dir.$files[$i];
+                $layouts[$i]['src'] = $dir.$files[$i];
                 $layouts[$i]['type'] = end(explode(".", $files[$i]));
                 $layouts[$i]['size'] = ceil(filesize($dir.$files[$i]) / 1024) < 1024 ? ceil(filesize($dir.$files[$i]) / 1024) . ' Кб' : (round(filesize($dir.$files[$i]) / 1024 / 1024, 2)) . ' Мб';
             }
-
-
         }else{
             return false;
         }
@@ -61,7 +59,6 @@ if ($admin !== false){
         if(!getSession('USER')){
            $user_id = createSessionUser();
         }
-
         uploadLayoutes();
     }
 
@@ -97,23 +94,28 @@ if ($admin !== false){
         // Создаем изображение на сервере
 
 
-        if($mime == 'psd'){
-            echo 'PSD';
-            exit();
-        }else{
             if(file_put_contents($uploaddir.$randomName, $decodedData)) {
-                $filesize = ceil(($uploaddir.$randomName) / 1024) < 1024 ? ceil(filesize($uploaddir.$randomName) / 1024) . ' Кб' : (round(filesize($uploaddir.$randomName) / 1024 / 1024, 2)) . ' Мб';
+                $filesize = ceil(filesize($uploaddir.$randomName) / 1024) < 1024 ? ceil(filesize($uploaddir.$randomName) / 1024) . ' Кб' : (round(filesize($uploaddir.$randomName) / 1024 / 1024, 2)) . ' Мб';
                 echo $randomName.":загружен успешно:".$user_folder.':'.$mime.':'.$filesize;
             }
             else {
                 // Показать сообщение об ошибке, если что-то пойдет не так.
                 echo "Что-то пошло не так. Убедитесь, что файл не поврежден!";
             }
-        }
-
 
         exit();
 
+    }
+
+    // DELETE LAYOUT
+    if(isset($_POST['delete_layout'])){
+        $file = $_POST['src'];
+        if(unlink($file)){
+            echo (int)200;
+        }else{
+            echo 'Error!';
+        }
+        exit();
     }
 
     /************************ END UPLOADING USER TEMPLATES****************************/

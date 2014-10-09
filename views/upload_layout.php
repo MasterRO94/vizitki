@@ -54,10 +54,18 @@
             jQuery.event.props.push('dataTransfer');
 
 // Максимальное количество загружаемых изображений
+            <?php if($layouts): ?>
+            var maxFiles = 5-<?=count($layouts)?>;
+            <?php else: ?>
             var maxFiles = 5;
-
+            <?php endif; ?>
 // Количество уже загруженных
+            <?php if($layouts): ?>
+            var uploadedFiles = <?=count($layouts)?>;
+            <?php else: ?>
             var uploadedFiles = 0;
+            <?php endif; ?>
+
 // Оповещение по умолчанию
             var errMessage = 0;
 
@@ -152,7 +160,7 @@
 
                             return function(e) {
                                 // Помещаем URI изображения в массив
-                                dataArray.push({name : file.name, value : this.result});
+                                dataArray.push({name : file.name, type: file.type, value : this.result});
                                 addImage((dataArray.length-1));
                             };
 
@@ -186,7 +194,13 @@
                 for (i = start; i < end; i++) {
                     // размещаем загруженные изображения
                     if($('#dropped-files > .image').length <= maxFiles) {
-                        $('#dropped-files').append('<div id="img-'+i+'" class="image" style="background: url('+dataArray[i].value+'); background-size: cover;"> <a href="#" id="drop-'+i+'" class="drop-button">Удалить изображение</a></div>');
+                        if(dataArray[i].type.indexOf('psd') + 1){
+                            $('#dropped-files').append('<div id="img-'+i+'" class="image" style="background: url(<?=ASSET?>/images/psd.png) no-repeat; background-position: center;"> <a href="#" id="drop-'+i+'" class="drop-button">Удалить изображение</a></div>');
+                        }else if(dataArray[i].type.indexOf('tiff') + 1){
+                            $('#dropped-files').append('<div id="img-'+i+'" class="image" style="background: url(<?=ASSET?>/images/tiff.png) no-repeat; background-position: center; background-size: contain;"> <a href="#" id="drop-'+i+'" class="drop-button">Удалить изображение</a></div>');
+                        }else{
+                            $('#dropped-files').append('<div id="img-'+i+'" class="image" style="background: url('+dataArray[i].value+') no-repeat; background-position: center; background-size: contain;"> <a href="#" id="drop-'+i+'" class="drop-button">Удалить изображение</a></div>');
+                        }
                     }else{
                         return false;
                     }
@@ -271,9 +285,18 @@
                         var dataSplit = data.split(':');
                         if(dataSplit[1] == 'загружен успешно') {
                             $('#uploaded-files').append('<li><a target="_blank" href="<?=PATH?>/uploads/_tmp/'+dataSplit[2]+'/'+dataSplit[0]+'">'+fileName+'</a> загружен успешно</li>');
-                            $('#layouts').append('<div data-file="'+fileName+'"><figure><img src="<?=PATH?>/uploads/_tmp/'+dataSplit[2]+'/'+dataSplit[0]+'" alt="'+fileName+'"/></<figure><p>Формат: '+dataSplit[3]+'</p><p>Размер: '+dataSplit[4]+'</p></figure></div>');
+
+                            if(dataSplit[3] == 'psd'){
+                                $('#layouts').append('<div id="layout-'+index+'" data-src="uploads/_tmp/'+dataSplit[2]+'/'+$.trim(dataSplit[0])+'"><div class="delete_layout">X</div><figure><img src="<?=ASSET?>/images/psd.png" alt="'+fileName+'"/></<figure><p>Формат: '+dataSplit[3]+'</p><p>Размер: '+dataSplit[4]+'</p></div>');
+                            }else if(dataSplit[3] == 'cdr'){
+                                $('#layouts').append('<div id="layout-'+index+'" data-src="uploads/_tmp/'+dataSplit[2]+'/'+$.trim(dataSplit[0])+'"><div class="delete_layout">X</div><figure><img src="<?=ASSET?>/images/cdr.png" alt="'+fileName+'"/></<figure><p>Формат: '+dataSplit[3]+'</p><p>Размер: '+dataSplit[4]+'</p></div>');
+                            }else if(dataSplit[3] == 'tiff'){
+                                $('#layouts').append('<div id="layout-'+index+'" data-src="uploads/_tmp/'+dataSplit[2]+'/'+$.trim(dataSplit[0])+'"><div class="delete_layout">X</div><figure><img src="<?=ASSET?>/images/tiff.png" alt="'+fileName+'"/></<figure><p>Формат: '+dataSplit[3]+'</p><p>Размер: '+dataSplit[4]+'</p></div>');
+                            }else{
+                                $('#layouts').append('<div id="layout-'+index+'" data-src="uploads/_tmp/'+dataSplit[2]+'/'+ $.trim(dataSplit[0])+'"><div class="delete_layout">X</div><figure><img src="<?=PATH?>/uploads/_tmp/'+dataSplit[2]+'/'+dataSplit[0]+'" alt="'+fileName+'"/></<figure><p>Формат: '+dataSplit[3]+'</p><p>Размер: '+dataSplit[4]+'</p></div>');
+                            }
                         } else {
-                            $('#uploaded-files').append('<li><a target="_blank" href=\"<?=PATH?>/uploads/_tmp/'+dataSplit[2]+'/' + data + '. Имя файла: ' + dataArray[index].name + '</li>');
+                            $('#uploaded-files').append('<li><a target="_blank" href=\"<?=PATH?>/uploads/_tmp/'+dataSplit[2]+'/' + $.trim(data) + '. Имя файла: ' + dataArray[index].name + '</li>');
                         }
 
                     });
@@ -285,6 +308,36 @@
                 maxFiles = 5 - uploadedFiles;
 
                 return false;
+            });
+
+            // DELETING UPLOADED LAYOUTS
+            $('#layouts').on('click', '.delete_layout', function(){
+
+                var _self = $(this).parent();
+                var src = _self.data('src');
+
+                $.ajax({
+                    url: '',
+                    type: 'POST',
+                    data: {
+                        delete_layout:true,
+                        src: src
+                    },
+                    success: function(result){
+                        console.log('result = ' + parseInt(result));
+                        if(parseInt(result) == 200){
+                            _self.hide(400);
+                            setTimeout(function(){
+                                _self.remove();
+                            },400);
+                        }else{
+                            alert('Ошибка!');
+                        }
+                    }
+                });
+
+
+
             });
 
         });
@@ -346,7 +399,26 @@
 
         <section id="uploaded_templates">
             <h4>Ваши макеты</h4>
-            <section id="layouts"></section>
+            <section id="layouts">
+                <?php if($layouts): ?>
+                    <?php $i=0; foreach($layouts as $layout): ?>
+                        <div id="layout-<?=$i?>" data-src="<?=$layout['src']?>">
+                            <div class="delete_layout">X</div>
+                            <figure>
+                                <?php if($layout['type'] == 'psd'): ?>
+                                    <img src="<?=ASSET?>/images/psd.png" alt="layout"/>
+                                <?php elseif($layout['type'] == 'tiff'): ?>
+                                    <img src="<?=ASSET?>/images/tiff.png" alt="layout"/>
+                                <?php else: ?>
+                                    <img src="<?=PATH.'/'.$layout['src']?>" alt="layout"/>
+                                <?php endif; ?>
+                            </figure>
+                            <p>Формат: <?=$layout['type']?></p>
+                            <p>Размер: <?=$layout['size']?></p>
+                        </div>
+                    <?php $i++; endforeach; ?>
+                <?php endif; ?>
+            </section>
             <section class="clear"></section>
         </section>
 
