@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
-	var MyBaseURL = 'http://art-vitalis.com.ua/test/vizitki/';
+    var MyBaseURL = 'http://art-vitalis.com.ua/test/vizitki/';
 
+    var confirmTemplate = $('#confirm-template');
 
     var textField = $('#cardEditorField');
     var textControl = $('#textEditControl');
@@ -15,11 +16,13 @@ $(document).ready(function() {
             $('#colorpickerHolder').fadeOut(100);
             var color = tieTxtControl($('#colorpickerHolder'));
             color.css('color', '#' + hex);
+            confirmTemplate.prop('checked', false);
         }
     });
 
     $('#colorSelector').on('click', function() {
         $('#colorpickerHolder').stop(true).fadeIn('slow');
+        confirmTemplate.prop('checked', false);
     });
 
     $('#backgroundColorHolder').ColorPicker({
@@ -34,6 +37,7 @@ $(document).ready(function() {
 
     $('#backgroundColorSelector').on('click', function() {
         $('#backgroundColorHolder').stop(true).fadeIn('slow');
+        confirmTemplate.prop('checked', false);
     });
 
     $('.lineControl label').on('mouseup', function() {
@@ -148,16 +152,20 @@ $(document).ready(function() {
         imgCont.appendTo(mainField);
 
         $('.imgMove').draggable().resizable();
+
+        confirmTemplate.prop('checked', false);
     };
 
     $(document).on('keydown', function(e) {
         if (e.keyCode == 16) {
             textField.addClass('point');
         }
+        confirmTemplate.prop('checked', false);
     }).on('keyup', function(e) {
         if (e.keyCode == 16) {
             textField.removeClass('point');
         }
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('click','.delBtn', function() {
@@ -176,6 +184,7 @@ $(document).ready(function() {
             del.remove();
             txtB.remove();
         }, 300);
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('click','.visible', function() {
@@ -193,31 +202,37 @@ $(document).ready(function() {
             $('<div class="disbl"></div>').appendTo(vis);
             txtB.addClass('hidden');
         }
+        confirmTemplate.prop('checked', false);
     });
 
     $('#addText').on('click touchstart', function(event) {
         event.preventDefault();
         addTxt();
+        confirmTemplate.prop('checked', false);
     });
 
     $('.addimageBlock .editorBtn').on('click touchstart', function(event) {
         $(this).parent().children('.addImageField').fadeIn(300);
+        confirmTemplate.prop('checked', false);
     });
 
 
     $('#addImage').on('click touchstart', function(event) {
         $(this).parent().parent().fadeOut(20);
+        confirmTemplate.prop('checked', false);
     });
 
 
     $('#superframe').on('load',function(){
         if($('#new_photo').text()!=''){addImage();}
+        confirmTemplate.prop('checked', false);
     });
 
     var setTxtParam = function(target, child) {
         textControl.children(child).find('option').prop('selected', false);
         textControl.children(child).find("option[value='" + target + "']").prop("selected", true);
         console.log(target);
+        confirmTemplate.prop('checked', false);
     };
 
     var setTxtStyle = function(styleBtn, bool) {
@@ -226,6 +241,7 @@ $(document).ready(function() {
         } else {
             $(styleBtn).removeClass('active');
         }
+        confirmTemplate.prop('checked', false);
     };
 
     $(document).on('focus','.editorContolBlock input', function(event) {
@@ -242,16 +258,19 @@ $(document).ready(function() {
         setTxtStyle('#txtItalic', focItm.css('font-style') === 'italic');
         setTxtStyle('#txtUnder', focItm.css('text-decoration').split(" ")[0] === 'underline');
 
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('blur','.editorContolBlock input', function(event) {
         var focItm = tieTxt($(this));
         focItm.removeClass('edit');
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('keyup','.editorContolBlock input', function(event) {
         var focItm = tieTxt($(this));
         focItm.text($(this).val());
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('mouseenter','.txtMove', function() {
@@ -262,11 +281,13 @@ $(document).ready(function() {
     $(document).on('dblclick','.txtMove', function() {
         var inp = tieTxtBack($(this));
         inp.children('input').focus();
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('mouseout','.txtMove', function(event) {
         var inp = tieTxtBack($(this));
         inp.children('input').removeClass('edit');
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('change','.chooseFont select', function() {
@@ -275,6 +296,7 @@ $(document).ready(function() {
         textField.find('[data-id="' + txtid + '"]').css({
             'font-family': val
         });
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('change','.chooseFontSize select', function() {
@@ -283,6 +305,7 @@ $(document).ready(function() {
         textField.find('[data-id="' + txtid + '"]').css({
             'font-size': val + 'px'
         });
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('click','#txtBold', function(event) {
@@ -296,6 +319,7 @@ $(document).ready(function() {
             itm.css('font-weight', 'bold');
             th.addClass('active');
         }
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('click','#txtItalic', function(event) {
@@ -309,6 +333,7 @@ $(document).ready(function() {
             itm.css('font-style', 'italic');
             th.addClass('active');
         }
+        confirmTemplate.prop('checked', false);
     });
 
     $(document).on('click','#txtUnder', function(event) {
@@ -322,13 +347,44 @@ $(document).ready(function() {
             itm.css('text-decoration', 'underline');
             th.addClass('active');
         }
+        confirmTemplate.prop('checked', false);
     });
 
-    /*--------------------------  SAVE  ------------------------------------ */
+    /*--------------------------  SAVE TEMPLATE  ------------------------------------ */
+
+    $(document).on('click', '#confirm-template', function(){
+        //if(!this.checked()) return false;
+
+        doImage(1);
+
+        var str = '';
+        var itm = $('#sortableBlock li');
+        var itmlen = itm.length;
+
+        itm.each(function(i) {
+            var liInWin = tieTxtSort($(this));
+            var liImgWin = tieImgSort($(this));
+            var liNew = {};
+            liNew.data_id = $(this).attr('data-id');
+            liNew.data_name = $(this).attr('data-name');
+            liNew.data_type = $(this).data('img');
+            liNew.data_vis = $(this).children('.visible').data('visi');
+            liNew.data_value = $(this).children('input').val();
+            liNew.style = liInWin.attr('style');
+            liNew.styleImg = liImgWin.attr('style');
+            str += JSON.stringify(liNew)+'|||';
+        });
+        var liCol = itmlen;
+        str += JSON.stringify(liCol)+'|||';
+        var color = $('#backgroundColorSelector div').css('background-color');
+        str += JSON.stringify(color);
+        $('#code_template').val(str);
+    });
+
 
     $(document).on('click','#save', function(event) {
         event.preventDefault();
-        doImage();
+        doImage(1);
 
         var str = '';
         var itm = $('#sortableBlock li');
@@ -356,6 +412,8 @@ $(document).ready(function() {
 
     $(document).on('click','#save1', function(event) {
         event.preventDefault();
+        doImage(2);
+
         var str = '';
         var itm = $('#sortableBlock li');
         var itmlen = itm.length;
@@ -587,21 +645,24 @@ $(document).ready(function() {
         return false;
     });
 
-    /*-----------------------------------------------GENERATE-----------------------------------------------------*/
-    $('#generate_image').on('click',function(){
-        var str = $('#code_template').val();
-        var item_id = $('#item_id').val();
-        $.ajax({
-            type: 'POST',
-            url: '/ajax/create_image.php',
-            data: ({w:'606',h:'348',params_str:str,id:item_id}),
-            success: function(data){
-                if(data == true){
-                    console.log('OK!');
-                };
-            }
-        });
 
-    })
+    // ADD BACK SIDE
+    var layout = $('#add_bside_window_bg');
+    var modal_window = $('#add_bside_window');
+    var close_window = $('#close_bside_window');
+
+    $('#add_back_side').on('click', function(){
+        layout.fadeIn(500);
+        setTimeout(function(){
+            modal_window.slideDown(500);
+        }, 300);
+    });
+
+    close_window.on('click', function(){
+        modal_window.slideUp(500);
+        setTimeout(function(){
+            layout.fadeOut(500);
+        }, 300);
+    });
 
 });

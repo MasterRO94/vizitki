@@ -4,7 +4,7 @@
 
 #    $url = $_SERVER['REQUEST_URI'];
 
-echo 'url= '.
+/*echo 'url= '.*/
 
 $url = str_replace('/test/vizitki', '', $_SERVER['REQUEST_URI']);
 
@@ -40,6 +40,8 @@ $routes = array(
     array('url' => '/upload-image', 'view' => 'uploadImageToEditor'),
 
     array('url' => '/offer/order', 'view' => 'offerOrder'),
+    array('url' => '/offer/order1', 'view' => 'offerOrder1'),
+    array('url' => '/offer/order2', 'view' => 'offerOrder2'),
     array('url' => '/save/order', 'view' => 'saveOrder'),
 
     array('url' => '/basket', 'view' => 'basket'),
@@ -50,8 +52,11 @@ $routes = array(
         ADMIN PANEL
      ********************/
     array('url' => '#/admin/?$#', 'view' => 'admin_orders'),
-    array('url' => '#^/admin/order/(?P<order_id>[a-z0-9-]+)/?$#i', 'view' => 'admin_order'),
+    array('url' => '#^/admin/order/(?P<order_id>[0-9-]+)/?$#i', 'view' => 'admin_order'),
+    array('url' => '#^/admin/delete-order/?$#i', 'view' => 'admin_del_order'),
 
+    array('url' => '#^/admin/catalog/(?P<catalog_alias>[a-z0-9_]+)/?$#i', 'view' => 'admin_catalog'),
+    array('url' => '#^/admin/catalog/(?P<catalog_alias>[a-z0-9_]+)/(?P<item_id>\d+)/?$#i', 'view' => 'admin_catalog_item'),
 
 );
 
@@ -68,6 +73,8 @@ foreach($routes as $route){
             // $id - vizitka template id
             // $delete_item_id
             // $order_id
+            // $catalog_alias
+            // $catalog_alias|$item_id
 
             $view = $route['view'];
         }

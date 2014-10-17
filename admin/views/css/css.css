@@ -1,3 +1,21 @@
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+}
+/**********************************/
+
+body{
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button, input[type=submit]{
+    cursor: pointer;
+}
+
+
 table{
     width: 100%;
     border-collapse: collapse;
@@ -32,3 +50,76 @@ footer{
     text-align: justify;
     padding: 15px 20px;
 }
+.order_info_img{
+    width: 606px;
+    height: 348px;
+}
+#order img{
+    max-height: 350px;
+    max-width: 610px;
+}
+
+/***  DELETE ORDER  ***/
+#delete_order_window{
+    display: none;
+    width: 350px;
+    height: 120px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    margin-left: -175px;
+}
+#delete_order_window .w_header{
+    width: 100%;
+    background: #5959ff;
+}
+#delete_order_window .w_header:after{
+    display: block;
+    content: '';
+    clear: both;
+}
+    #delete_order_window .w_header h3{
+        color: #fff;
+        font-size: 16px;
+        float: left;
+        padding: 7px 0 7px 15px;
+    }
+    #delete_order_window #close{
+        color: #fff;
+        font-size: 16px;
+        background: #c80000;
+        float: right;
+        padding: 7px 13px;
+        cursor: pointer;
+    }
+    #delete_order_window #close:hover{
+        background: #ef0000;
+    }
+#delete_order_window .w_body {
+    background: #efefef;
+    padding: 15px;
+    text-align: center;
+}
+    #delete_order_window .w_body p{
+        margin-bottom: 15px;
+        text-align: left;
+    }
+    #delete_order_window .w_body span{
+        color: #0092ef;
+    }
+
+
+.list{
+    width: 98%;
+    margin: 0 auto;
+    max-width: 1300px;
+}
+
+
+#groups{
+
+}
+    #groups .preview img{
+        max-width: 200px;
+        max-height: 200px;
+    }

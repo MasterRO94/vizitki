@@ -18,7 +18,7 @@ mysqli_query($link,"SET NAMES 'UTF8'") or die('Cant set charset');
     function getOrders(){
         global $link;
 
-        $q = "SELECT * FROM orders";
+        $q = "SELECT * FROM orders ORDER BY id DESC";
         $result = mysqli_query($link, $q);
         if(!$result) return false;
 
@@ -158,6 +158,41 @@ function getTiraj($id){
 }
 
 /*============== Get Tiraj ================*/
+
+
+/*============== DELETE ORDER ================*/
+function deleteOrder($id){
+    global $link;
+
+    $q = "DELETE FROM orders WHERE id={$id}";
+    $result = mysqli_query($link,$q);
+    if(!$result){
+        return false;
+    }
+    return true;
+}
+
+/*============== DELETE ORDER ================*/
+
+
+
+/*============== GET GROUPS|SERVICES ================*/
+function getAdminServices(){
+    global $link;
+
+    $q = "SELECT * FROM services ORDER BY `position` ASC";
+    $result = mysqli_query($link, $q);
+    if(!$result) return false;
+
+    $services = array();
+    while($row = mysqli_fetch_assoc($result)){
+        $services[] = $row;
+    }
+
+    return $services;
+}
+
+/*============== GET GROUPS|SERVICES ================*/
 
 
 

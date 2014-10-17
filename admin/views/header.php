@@ -3,8 +3,15 @@
 <header>
     <nav>
         <ul>
-            <li><a href="<?=PATH?>/admin">Заказы</a></li>
-            <li><a href="#"></a></li>
+            <li><a href="<?=PATH.ADMIN?>">Заказы</a></li>
+            <li>
+                <a href="#">Каталог</a>
+                <ul>
+                    <li><a href="<?=PATH.ADMIN?>catalog/group_list">Группы товаров</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li>
             <li><a href="#"></a></li></ul>

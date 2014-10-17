@@ -39,6 +39,7 @@ function getSession($name){
 
 function deleteItemFromBasket($id){
     unset($_SESSION['basket'][$id]);
+    $_SESSION['basket'] = array_values($_SESSION['basket']);
     redirect();
 }
 

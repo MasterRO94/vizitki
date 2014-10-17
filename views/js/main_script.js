@@ -9,6 +9,8 @@ function doImage(side) {
 
             var out = $("#img_out_"+side);
 
+            out.find('canvas').remove();
+            out.find('img').remove();
             out.append(canvas);
 
             /*var tmp = canvas.toDataURL("image/png");
